@@ -1,3 +1,8 @@
+---
+title: ferrugemjs
+author: FerrugemJS.
+---
+
 ## FerrugemJS
 
 ![Ferrugem Logo](/assets/img/new-logo-home.png) 
@@ -20,7 +25,7 @@ Latest ✔ | Latest ✔ | 9+ ✔ | Latest ✔ | 6.1+ ✔ | Latest ✔ |
 ### examples
 https://ferrugemjs.github.io/examples/index.html
 
-### how to start:
+### how to start
 clone
 [skeleton-typescript](https://github.com/ferrugemjs/skeleton-typescript) (recomended way)
 
@@ -130,7 +135,7 @@ now, we can importe into other template
 
 ### module lifecycle
 
-#### attached:
+#### attached
 
 By implementing the method your module will be prompted for it once your component is in "DOM".
 
@@ -143,7 +148,7 @@ attached(){
 
 
 
-#### detached:
+#### detached
 
 By implementing the method your module will be prompted for it once your component is detached from "DOM".
 
@@ -156,7 +161,7 @@ detached(){
 
 
 
-#### set+attribute name:
+#### set+attribute name
 
 By implementing the method with the module attribute in CamelCase format your module will be notified when there is any change to the way template attribute.
 
@@ -815,60 +820,58 @@ eg.
 </template>	
 ```
 
-[TOC]
 
-
-- [Browser Support](#Browser Support)
+- [Browser Support](#browser-support)
 - [examples](#examples)
-- [how to start:](#how to start:)
-- [individual install](#individual install)
-- - [with requirejs](#with requirejs)
-- - [with webpack](#with webpack)
-- - [with jspm](#with jspm)
-- - [initialization](#initialization)
-- [modules & custom tags](#modules & custom tags)
-- [module lifecycle](#module lifecycle)
-- - [attached:](#attached:)
-- - [detached:](#detached:)
-- - [set+attribute name:](#set+attribute name:)
-- - [component refresh from modelview](#component refresh from modelview)
-- - [component refresh with state](#component refresh with state)
-- - [component shouldUpdate](#component shouldUpdate)
-- - [one-way data binding](#one-way data binding)
-- - [event binding](#event binding)
-- [manual event reactivity](#manual event reactivity)
+- [how to start](#how-to-start)
+- install
+	- [individual install](#individual-install)
+	- [with requirejs](#with-requirejs)
+	- [with webpack](#with-webpack)
+	- [with jspm](#with-jspm)
+	- [initialization](#initialization)
+- [modules & custom tags](#modules--custom-tags)
+- [module lifecycle](#module-lifecycle)
+	- [attached](#attached)
+	- [detached](#detached)
+	- [set+attribute name](#setattribute-name)
+	- [component refresh from modelview](#component-refresh-from-modelview)
+	- [component refresh with state](#component-refresh-with-state)
+	- [component shouldUpdate](#component-shouldupdate)
+	- [one-way data binding](#one-way-data-binding)
+	- [event binding](#event-binding)
+- [manual event reactivity](#manual-event-reactivity)
 - [router](#router)
-- [template stuff](#template stuff)
-- - [if](#if)
-- - [tag if](#tag if)
-- - [Tags if,else](#Tags if,else)
-- - [Tags if,elseif](#Tags if,elseif)
-- - [Tags if,elseif,else](#Tags if,elseif,else)
-- - [Loop render with each](#Loop render with each)
-- - [Loop render with a custom index](#Loop render with a custom index)
-- - [Tag for each](#Tag for each)
-- - [Tag for each with index](#Tag for each with index)
-- - [skip](#skip)
-- - [import other module](#import other module)
-- - [give an alias in module import statement](#give an alias in module import statement)
-- - [import a css file](#import a css file)
-- - [embed a style tag](#embed a style tag)
-- - [change the css className](#change the css className)
-- - [change the css className with expression](#change the css className with expression)
-- - [set where the content of element must be placed](#set where the content of element must be placed)
-- - [import other library/script](#import other library/script)
-- - [import other ui library as a namespace](#import other ui library as a namespace)
-- - [preserve a element instance](#preserve a element instance)
-- - [associate a controller method to DOM event](#associate a controller method to DOM event)
-- - [controller method to DOM event with paramaters](#controller method to DOM event with paramaters)
-- - [camelCase method or attribute](#camelCase method or attribute)
-- - [controller method into a custom element event](#controller method into a custom element event)
+- [template stuff](#template-stuff)
+	- [if](#if)
+	- [tag if](#tag-if)
+	- [Tags if,else](#tags-ifelse)
+	- [Tags if,elseif](#tags-ifelseif)
+	- [Tags if,elseif,else](#tags-ifelseifelse)
+	- [Loop render with each](#loop-render-with-each)
+	- [Loop render with a custom index](#loop-render-with-a-custom-index)
+	- [Tag for each](#tag-for-each)
+	- [Tag for each with index](#tag-for-each-with-index)
+	- [skip](#skip)
+	- [import other module](#import-other-module)
+	- [give an alias in module import statement](#give-an-alias-in-module-import-statement)
+	- [import a css file](#import-a-css-file)
+	- [embed a style tag](#embed-a-style-tag)
+	- [change the css className](#change-the-css-className)
+	- [change the css className with expression](#change-the-css-classname-with-expression)
+	- [set where the content of element must be placed](#set-where-the-content-of-element-must-be placed)
+	- [import other library/script](#import-other-libraryscript)
+	- [import other ui library as a namespace](#import-other-ui-library-as-a-namespace)
+	- [preserve a element instance](#preserve-a-element-instance)
+	- [associate a controller method to DOM event](#associate-a-controller-method-to-DOM-event)
+	- [controller method to DOM event with paramaters](#controller-method-to-DOM-event-with paramaters)
+	- [camelCase method or attribute](#camelcase-method-or-attribute)
+	- [controller method into a custom element event](#controller-method-into-a-custom-element event)
 - [composition](#composition)
-- - [custom view-model](#custom view-model)
-- - [template viewmodel-less](#template viewmodel-less)
-- - [function representation](#function representation)
-- [power ups!](#power ups!)
-- - [tag script](#tag script)
-- - [conditional script](#conditional script)
-- - [scope into script](#scope into script)
-
+	- [custom view-model](#custom-view-model)
+	- [template viewmodel-less](#template-viewmodel-less)
+	- [function representation](#function-representation)
+- [power ups!](#power-ups)
+	- [tag script](#tag-script)
+	- [conditional script](#conditional-script)
+	- [scope into script](#scope-into-script)
