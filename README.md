@@ -4,7 +4,7 @@
 
 
 
-**A simple, reactive, conventional and non-intrusive library!**
+### A simple, reactive, conventional and non-intrusive library!
 ***FerrugemJS*** is inspired by [Aurelia](http://aurelia.io/) and [React](https://facebook.github.io/react/) using [Incremental DOM](http://google.github.io/incremental-dom/) with a html template engine.
 
 ***No jquery required, only 2kB!***
@@ -17,22 +17,22 @@
 --- | --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | 9+ ✔ | Latest ✔ | 6.1+ ✔ | Latest ✔ |
 
-***examples***
+### examples
 https://ferrugemjs.github.io/examples/index.html
 
-***how to start:***
+### how to start:
 clone
 [skeleton-typescript](https://github.com/ferrugemjs/skeleton-typescript) (recomended way)
 
-***individual install***
+### individual install
 
 npm i ferrugemjs --save
 
-****with requirejs****
+#### with requirejs
 
 npm i ferrugemjs --save
 
-****with webpack****
+#### with webpack
 
 npm i ferrugemjs --save
 
@@ -69,14 +69,14 @@ platform
     );
 ```
 
-****with jspm****
+#### with jspm
 
 jspm install npm:ferrugemjs
 
 npm install --save-dev gulp-ferrugemjs
 
 
-***initialization***
+#### initialization
 
 eg. index.html file
 
@@ -94,7 +94,7 @@ If you want to modify the path of the init file just add this information to the
 ``` html
 <div app="other_path/init_app_file"></div>
 ```
-**modules & custom tags**
+### modules & custom tags
 
 To create a module witch will be a custom tag do you need two files with same name(eg. "module-a.ts" and "module-a.html").
 By convention FerrugemJS know that "module-a.ts" is a controller file and "module-a.html" is the view of it and you can easily import it into your main app html file or into other module and use as a component with a custom tag.
@@ -128,9 +128,9 @@ now, we can importe into other template
 ```
 
 
-**module lifecycle**
+### module lifecycle
 
-***attached:***
+#### attached:
 
 By implementing the method your module will be prompted for it once your component is in "DOM".
 
@@ -143,7 +143,7 @@ attached(){
 
 
 
-***detached:***
+#### detached:
 
 By implementing the method your module will be prompted for it once your component is detached from "DOM".
 
@@ -156,7 +156,7 @@ detached(){
 
 
 
-***set+attribute name:***
+#### set+attribute name:
 
 By implementing the method with the module attribute in CamelCase format your module will be notified when there is any change to the way template attribute.
 
@@ -167,7 +167,7 @@ setName(name:string){
 }
 ```
 
-***component refresh from modelview***
+#### component refresh from modelview
 
 Controller refresh.
 
@@ -183,7 +183,7 @@ export class ModuleA{
 }
 ```
 
-***component refresh with state***
+#### component refresh with state
 
 Controller refresh with new modelview values equivalent to 'setState' of react.
 
@@ -198,7 +198,7 @@ export class ModuleA{
 }
 ```
 
-***component shouldUpdate***
+#### component shouldUpdate
 
 By implementing the method "shouldUpdate" you can decide if a component should refresh or not by returning true or false.
 
@@ -216,7 +216,7 @@ export class ModuleA{
 }
 ```
 
-***one-way data binding***
+#### one-way data binding
 
 When you set the 'value=${name}' in a input component it will set "value" attribute in element after a controller refresh.
 
@@ -232,7 +232,7 @@ eg.
 
 
 
-***event binding***
+#### event binding
 
 When you set the "keyup.bind" in a input component it will change the "name" attribute in controller after a keyup event.
 
@@ -242,13 +242,13 @@ eg.
   <div>
     <h2>Hello World, ${this.name}</h2>
     <input keyup.bind="this.name"/>
-  </div>  
+  </div>
 </template>
 ```
 
 
 
-***manual event reactivity***
+### manual event reactivity
 
 eg.
 ``` xml
@@ -275,16 +275,16 @@ export class HelloWorld{
 }
 ```
 
-***router***
+### router
 
 There are a basic implamentation at [ferrugemjs-router](https://github.com/ferrugemjs/router).
 
 
-***template stuff***
+### template stuff
 
 
 
-***if***
+#### if
 
 Conditional render with if.
 
@@ -299,7 +299,7 @@ eg.
 
 
 
-***tag if***
+#### tag if
 
 conditional flow with tag if condition.
 
@@ -313,7 +313,7 @@ eg.
 ```
 
 
-***Tags if,else***
+#### Tags if,else
 
 eg.
 ``` xml
@@ -323,7 +323,7 @@ eg.
       <span>name is test</span>
     <else>
       	<span>I dont know you!</span>
-    </else>  
+    </else>
     </if>
   </div>
 </template>
@@ -331,7 +331,7 @@ eg.
 
 
 
-***Tags if,elseif***
+#### Tags if,elseif
 
 eg.
 ``` xml
@@ -341,7 +341,7 @@ eg.
       <span>name is test</span>
     <elseif condition="this.name==='test2'">
       <span>ok, you are test2</span>
-    </elseif>  
+    </elseif>
     </if>
   </div>
 </template>
@@ -349,7 +349,7 @@ eg.
 
 
 
-***Tags if,elseif,else***
+#### Tags if,elseif,else
 
 eg.
 ``` xml
@@ -359,10 +359,10 @@ eg.
       <span>name is test</span>
       <elseif condition="this.name==='test2'">
         <span>ok, you are test2</span>
-      </elseif>  
+      </elseif>
       <else>
         <span>I dont know you!</span> 
-      </else>  
+      </else>
     </if>
   </div>
 </template>
@@ -370,7 +370,7 @@ eg.
 
 
 
-***Loop render with each***
+#### Loop render with each
 
 eg.
 ``` xml
@@ -383,7 +383,7 @@ eg.
 
 
 
-***Loop render with a custom index***
+#### Loop render with a custom index
 
 eg.
 ``` xml
@@ -396,7 +396,7 @@ eg.
 
 
 
-***Tag for each***
+#### Tag for each
 
 eg.
 ``` xml
@@ -411,7 +411,7 @@ eg.
 
 
 
-***Tag for each with index***
+#### Tag for each with index
 
 eg.
 ``` xml
@@ -426,7 +426,7 @@ eg.
 
 
 
-***skip***
+#### skip
 
 Conditional children render with skip.
 
@@ -442,7 +442,7 @@ eg.
 This is util when working with libs that dinamicaly insert itens into that node as [select2](https://select2.github.io/), [selectize](https://selectize.github.io/selectize.js/) and others.
 
 
-***import other module***
+#### import other module
 
 eg.
 ``` html
@@ -450,14 +450,14 @@ eg.
     <require from="./example/hello-world"/>
     <div>
       <h1>My First APP with ${this.title}</h1>
-      <hello-world name="C-3PO"/>   
+      <hello-world name="C-3PO"/>
     </div>
 </template>
 ```
 
 
 
-***give an alias in module import statement*** 
+#### give an alias in module import statement
 
 eg.
 ``` html
@@ -466,13 +466,13 @@ eg.
     <div>
       <h1>My First APP with ${this.title}</h1>
       <sea-bienvenido name="C-3PO"/>
-    </div>  
+    </div>
 </template>
 ```
 
 
 
-***import a css file*** 
+#### import a css file
 
 You need "plugin-css" for jspm or equivalent if you are using requirejs.
 
@@ -480,18 +480,18 @@ eg.
 ``` xml
 <template>
     <!--if using 'plugin-css' systemjs-->
-    <require from="./hello-world.css!"/>    
+    <require from="./hello-world.css!"/>
     <!--if using commons css plugins to requirejs-->
     <require from="style!./hello-world"/>
     <!--to others commons css plugins-->
-    <require from="css!./hello-world.css"/>    
-    <h1>My First APP with ${this.title}</h1>   
+    <require from="css!./hello-world.css"/>
+    <h1>My First APP with ${this.title}</h1>
 </template>
 ```
 
 
 
-***embed a style tag***
+#### embed a style tag
 
 eg.
 ``` html
@@ -501,13 +501,13 @@ eg.
     	background-color:red;
     }
     </style>
-    <h1 class="especial-tag">My First APP with ${this.title}</h1>   
+    <h1 class="especial-tag">My First APP with ${this.title}</h1>
 </template>
 ```
 
 
 
-***change the css className*** 
+#### change the css className
 
 eg.
 ``` html
@@ -523,7 +523,7 @@ eg.
 
 
 
-***change the css className with expression***
+#### change the css className with expression
 
 eg.
 ``` html
@@ -545,12 +545,12 @@ eg.
 
 
 
-***set where the content of element must be placed***
+#### set where the content of element must be placed
 
 eg.
 ``` xml
 <!--hello-world.html-->
-<template>    
+<template>
  <h1>
   <content/>
  </h1>
@@ -560,19 +560,19 @@ Bellow is as "hello-world.html" will be used.
 
 eg.
 ``` xml
-<template>    
+<template>
     <require from="./example/hello-world"/>
     <div>
       <hello-world>
             Good night!
       </hello-world> 
-    </div>  
+    </div>
 </template>
 ```
 
 
 
-***import other library/script***
+#### import other library/script
 
 eg.
 ``` html
@@ -583,7 +583,7 @@ eg.
 ```
 
 
-***import other ui library as a namespace***
+#### import other ui library as a namespace
 
 It is a basic example, but there are a example more elaborate at [ferrugemjs-router](https://github.com/ferrugemjs/router).
 
@@ -599,7 +599,7 @@ eg.
 ```
 
 
-***preserve a element instance***
+#### preserve a element instance
 
 eg.
 ``` xml
@@ -615,7 +615,7 @@ eg.
 You shouldnt use this every moment, but it is recomended to use in a  interation with tag "for" ou instruction "each".
 
 
-***associete a controller method to DOM event***
+#### associate a controller method to DOM event
 
 eg.
 ``` xml
@@ -626,7 +626,7 @@ eg.
 
 
 
-***associete a controller method to DOM event with extra paramaters.
+#### controller method to DOM event with paramaters
 
 eg.
 ``` xml
@@ -637,7 +637,9 @@ eg.
 
 
 
-***to access a camelCase method or attribute from template (use slashes '-')***
+#### camelCase method or attribute
+
+to access a camelCase method or attribute from template use slashes '-'.
 
 eg.
 ``` xml
@@ -651,7 +653,7 @@ eg.
 
 
 
-***associete a controller method to a custom element event***
+#### controller method into a custom element event
 
 eg.
 ``` xml
@@ -665,7 +667,7 @@ eg.
 
 
 
-***composition***
+### composition
 
 with composition you need  use the same id an key:id to load the view.
 
@@ -680,7 +682,7 @@ eg.
 
 
 
-***custom view-model***
+#### custom view-model
 
 eg.
 ``` xml
@@ -689,7 +691,7 @@ eg.
   <div>
     <h1>VIEW ONE</h1>
     <span>bla,bla,bla....</span>
-  </div>  
+  </div>
 </template>
 ```
 ``` xml
@@ -699,13 +701,13 @@ eg.
     <h3>VIEW TWO</h3>
     <p>lol lol lol</p>
     <img src="logo.png"/>
-  </div>  
+  </div>
 </template>
 ```
 
 
 
-***template viewmodel-less***
+#### template viewmodel-less
 
 eg.
 ``` xml
@@ -714,7 +716,7 @@ eg.
 </template>
 ```
 
-***function representation***
+#### function representation
 
 If you have a function with a "export default" you can represent it in your template with a tag.
 
@@ -759,11 +761,11 @@ using
 
 
 
-**power ups!**
+### power ups!
 
 When you need more power then...
 
-***tag script***
+#### tag script
 
 useful when working with some jquery plugins.
 
@@ -780,7 +782,7 @@ eg.
 </template>	
 ```
 
-***conditional script***
+#### conditional script
 
 eg.
 ``` xml
@@ -796,7 +798,7 @@ eg.
 ```
 
 
-***get "this" scope into script***
+#### scope into script
 
 
 eg.
@@ -812,4 +814,59 @@ eg.
  </div>
 </template>	
 ```
+
+
+- [Browser Support](#Browser Support)
+- [examples](#examples)
+- [how to start:](#how to start:)
+- [individual install](#individual install)
+- - [with requirejs](#with requirejs)
+- - [with webpack](#with webpack)
+- - [with jspm](#with jspm)
+- - [initialization](#initialization)
+- [modules & custom tags](#modules & custom tags)
+- [module lifecycle](#module lifecycle)
+- - [attached:](#attached:)
+- - [detached:](#detached:)
+- - [set+attribute name:](#set+attribute name:)
+- - [component refresh from modelview](#component refresh from modelview)
+- - [component refresh with state](#component refresh with state)
+- - [component shouldUpdate](#component shouldUpdate)
+- - [one-way data binding](#one-way data binding)
+- - [event binding](#event binding)
+- [manual event reactivity](#manual event reactivity)
+- [router](#router)
+- [template stuff](#template stuff)
+- - [if](#if)
+- - [tag if](#tag if)
+- - [Tags if,else](#Tags if,else)
+- - [Tags if,elseif](#Tags if,elseif)
+- - [Tags if,elseif,else](#Tags if,elseif,else)
+- - [Loop render with each](#Loop render with each)
+- - [Loop render with a custom index](#Loop render with a custom index)
+- - [Tag for each](#Tag for each)
+- - [Tag for each with index](#Tag for each with index)
+- - [skip](#skip)
+- - [import other module](#import other module)
+- - [give an alias in module import statement](#give an alias in module import statement)
+- - [import a css file](#import a css file)
+- - [embed a style tag](#embed a style tag)
+- - [change the css className](#change the css className)
+- - [change the css className with expression](#change the css className with expression)
+- - [set where the content of element must be placed](#set where the content of element must be placed)
+- - [import other library/script](#import other library/script)
+- - [import other ui library as a namespace](#import other ui library as a namespace)
+- - [preserve a element instance](#preserve a element instance)
+- - [associate a controller method to DOM event](#associate a controller method to DOM event)
+- - [controller method to DOM event with paramaters](#controller method to DOM event with paramaters)
+- - [camelCase method or attribute](#camelCase method or attribute)
+- - [controller method into a custom element event](#controller method into a custom element event)
+- [composition](#composition)
+- - [custom view-model](#custom view-model)
+- - [template viewmodel-less](#template viewmodel-less)
+- - [function representation](#function representation)
+- [power ups!](#power ups!)
+- - [tag script](#tag script)
+- - [conditional script](#conditional script)
+- - [scope into script](#scope into script)
 
