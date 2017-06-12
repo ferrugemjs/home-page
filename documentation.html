@@ -1,170 +1,762 @@
 <!DOCTYPE html>
-<html lang="en-us">
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-    <title>ferrugemjs</title>
+<!-- saved from url=(0039)https://ferrugemjs.github.io/home-page/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>FerrugemJS</title>
+    <meta name="description" content="a basic home page">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css" media="screen">
-    <link href="./assets/css/css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="./assets/css/github-light.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="./assets/js/sunlight-1.22.0/themes/sunlight.default.css" />
-	<script type="text/javascript" src="./assets/js/sunlight-1.22.0/sunlight-min.js"></script>
-	<script type="text/javascript" src="./assets/js/sunlight-1.22.0/lang/sunlight.actionscript-min.js"></script>
-  	<script type="text/javascript" src="./assets/js/sunlight-1.22.0/lang/sunlight.xml-min.js"></script>
- 
+    <meta name="theme-color" content="#157878">
+    <link href="./index_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./index_files/style.css">
   </head>
   <body>
-    <section class="page-header">
+<section class="page-header">
       <h1 class="project-name">ferrugemjs</h1>
       <h2 class="project-tagline">A simple, reactive, conventional and non-intrusive library.</h2>
-      <a href="https://github.com/ferrugemjs/library" class="btn">View on GitHub</a>
-      <a href="getting-started.html" class="btn">Getting Started</a>
+	  <a href="https://github.com/ferrugemjs/home-page" class="btn">View on GitHub</a>
+	  <a href="getting-started.html" class="btn">Getting Started</a>    
     </section>
-    <section class="main-content">
-      	<h3>
-			<a id="welcome" class="anchor" href="https://davidjamesstone.github.io/superviews.js/#welcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation
-		</h3>
-		<p>
-			<ul style="float:left;overflow:hidden;width:220px;float:left">
-				<li>
-					<a href="#installation">installation</a>
-					<ul>
-						<li>
-							<a href="#individual_install">individual</a>
-						</li>
-						<li>
-							<a href="#with_requirejs">with requirejs</a>
-						</li>
-						<li>
-							<a href="#with_webpack">with webpack</a>
-						</li>
-						<li>
-							<a href="#individual_install">individual</a>
-						</li>
-					</ul>				
-				</li>
-				<li>
-					<a href="#with_requirejs">with requirejs</a>				
-				</li>
-				<li>
-					<a href="#with_webpack">with webpack</a>				
-				</li>
-				<li>
-					<a href="#with_jspm">with jspml</a>				
-				</li>
-				<li>
-					<a href="#initialization">initialization</a>				
-				</li>
-				<li>
-					<a href="#modules_custom_tags">modules & custom tags</a>				
-				</li>
-				<li>
-					<a href="#module_lifecycle">module lifecycle</a>				
-				</li>
-				<li>
-					<a href="#component_update">component update</a>				
-				</li>
-				<li>
-					<a href="#component_should_update">component shouldUpdate</a>				
-				</li>
-				<li>
-					<a href="#binding">binding</a>				
-				</li>
-				<li>
-					<a href="#router">router</a>				
-				</li>
-				<li>
-					<a href="#template_stuffs">template stuff</a>				
-				</li>
-			</ul>
-			<div style="float:right;overflow:auto;width:600px">
-				
-				<div class="box-block">
-					<h3 id="individual_install">individual install</h3>
-					<span>npm i ferrugemjs --save</span>				
-				</div>
-				<div class="box-block">
-					<h3 id="with_requirejs">with requirejs</h3>
-					<span>npm i ferrugemjs --save</span>				
-				</div>				
-				<div class="box-block">
-					<h3 id="with_webpack">with webpack</h3>
-					<span>npm i ferrugemjs --save-dev</span>
-					<br/>
-					<span>npm i ferrugemjs-loader --save-dev</span>				
-					<br/>
-					<span>
-						add 'ferrugemjs-loader' to your rules and alias
-					</span>
-					<pre class="sunlight-highlight-actionscript">
-module: {
-	rules: [
-		{
-		  test: /\.html$/
-		  ,loader:'ferrugemjs-loader'
-		}
-	]
-},
-,resolve: {
-	extensions: [".js",".html"]
-	,alias:{    		
-		"app":__dirname + '/src'
-		,"ferrugemjs":"ferrugemjs/dist/core"
-	}    
- }
-					</pre>
-					<span>to work with webpack there is 'ferrugemjs/platform' as a application bootstrapping.</span>					
-					<pre class="sunlight-highlight-actionscript">
-import platform from "ferrugemjs/platform";
-import init_app from "./init-app";
 
-platform
-    .bootstrap(init_app)
-    .at(
-        document.getElementById("init_app_id")
-    );					
-					</pre>
-				</div>				
-				<div class="box-block">
-					<h3 id="individual_install">individual install</h3>
-					<span>add 'ferrugemjs-loader' to your rules and alias</span>
-					<pre class="sunlight-highlight-actionscript">
-module: {
-	rules: [
-		{
-		  test: /\.html$/
-		  ,loader:'ferrugemjs-loader'
-		}
-	]
-},
-,resolve: {
-	extensions: [".js",".html"]
-	,alias:{    		
-		"app":__dirname + '/src'
-		,"ferrugemjs":"ferrugemjs/dist/core"
-	}    
- }
-					</pre>
-				</div>	
-				<div class="box-block">					
-					<h3 id="modules_custom_tags">modules & custom tags</h3>
-					<span>add 'ferrugemjs-loader' to your rules and alias</span>
-					<pre class="sunlight-highlight-xml">
-&lt;template&gt;
-	&lt;h1&gt;My First APP with ${this.title}&lt;/h1&gt;
-&lt;/template&gt;
-					</pre>
-				</div>					
-			</div>
-		</p>
-      <footer class="site-footer" style="float:left">
-        <span class="site-footer-owner"><a href="https://github.com/ferrugemjs/library">ferrugemjs</a> is maintained by <a href="https://github.com/ferrugemjs/library">ferrugemjs</a>.</span>
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    <section class="main-content">
+<div class="documentation-body" style="float:right;width:591px">
+
+      <h2 id="ferrugemjs">Documentation</h2>
+<h3 id="modules--custom-tags">modules &amp; custom tags</h3>
+
+<p>To create a module witch will be a custom tag do you need two files with same name(eg. “module-a.ts” and “module-a.html”).
+By convention FerrugemJS know that “module-a.ts” is a controller file and “module-a.html” is the view of it and you can easily import it into your main app html file or into other module and use as a component with a custom tag.</p>
+
+<p>eg. 
+“module-a.ts” file.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="kr">class</span> <span class="nx">ModuleA</span><span class="p">{</span>
+    <span class="k">private</span> <span class="nx">title</span><span class="err">:</span><span class="kr">string</span><span class="p">;</span>
+    <span class="kd">constructor</span><span class="p">(){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">"test!"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>eg. “module-a.html” file.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>My First APP with ${this.title}<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<p>now, we can importe into other template</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./module-a"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;module-a</span> <span class="na">title=</span><span class="s">"new title!"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="module-lifecycle">module lifecycle</h3>
+
+<h4 id="attached">attached</h4>
+
+<p>By implementing the method your module will be prompted for it once your component is in “DOM”.</p>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">attached</span><span class="p">(){</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'im in DOM'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="detached">detached</h4>
+
+<p>By implementing the method your module will be prompted for it once your component is detached from “DOM”.</p>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">detached</span><span class="p">(){</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'im out'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="setattribute-name">set+attribute name</h4>
+
+<p>By implementing the method with the module attribute in CamelCase format your module will be notified when there is any change to the way template attribute.</p>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">setName</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span><span class="kr">string</span><span class="p">){</span>
+ <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="component-refresh-from-modelview">component refresh from modelview</h4>
+
+<p>Controller refresh.</p>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="kr">class</span> <span class="nx">ModuleA</span><span class="p">{</span>
+  <span class="k">private</span> <span class="nx">title</span><span class="err">:</span><span class="kr">string</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
+  <span class="nx">doAnyThing</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">"new Title"</span><span class="p">;</span>
+    <span class="nx">refresh</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="component-refresh-with-state">component refresh with state</h4>
+
+<p>Controller refresh with new modelview values equivalent to ‘setState’ of react.</p>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="kr">class</span> <span class="nx">ModuleA</span><span class="p">{</span>
+  <span class="k">private</span> <span class="nx">title</span><span class="err">:</span><span class="kr">string</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
+  <span class="nx">doAnyThing</span><span class="p">(){</span>
+    <span class="nx">refresh</span><span class="p">({</span><span class="na">title</span><span class="p">:</span><span class="s2">"new Title"</span><span class="p">});</span><span class="c1">//equivalent to "setState of react"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="component-shouldupdate">component shouldUpdate</h4>
+
+<p>By implementing the method “shouldUpdate” you can decide if a component should refresh or not by returning true or false.</p>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="kr">class</span> <span class="nx">ModuleA</span><span class="p">{</span>
+  <span class="k">private</span> <span class="nx">title</span><span class="err">:</span><span class="kr">string</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
+  <span class="nx">doAnyThing</span><span class="p">(){</span>
+    <span class="nx">refresh</span><span class="p">({</span><span class="na">title</span><span class="p">:</span><span class="s2">"new Title"</span><span class="p">});</span><span class="c1">//equivalent to "setState of react"</span>
+  <span class="p">}</span>
+  <span class="k">private</span> <span class="nx">shouldUpdate</span><span class="p">(</span><span class="nx">new_props</span><span class="err">:</span><span class="nx">ISubComp</span> <span class="o">=</span> <span class="p">{})</span><span class="err">:</span><span class="kr">boolean</span><span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">!=</span> <span class="nx">new_props</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="one-way-data-binding">one-way data binding</h4>
+
+<p>When you set the ‘value=${name}’ in a input component it will set “value” attribute in element after a controller refresh.</p>
+
+<p>eg.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Hello World, ${this.name}<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">value=</span><span class="s">"${this.name}"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="event-binding">event binding</h4>
+
+<p>When you set the “keyup.bind” in a input component it will change the “name” attribute in controller after a keyup event.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Hello World, ${this.name}<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">keyup.bind=</span><span class="s">"this.name"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="manual-event-reactivity">manual event reactivity</h3>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Hello World, ${this.name}<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">change.trigger=</span><span class="s">"this.manualChangeMethod"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="kr">class</span> <span class="nx">HelloWorld</span><span class="p">{</span>
+  <span class="k">private</span> <span class="nx">name</span><span class="err">:</span><span class="kr">string</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
+  <span class="kd">constructor</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">manualChangeMethod</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="err">:</span><span class="k">void</span><span class="p">{</span>	
+	<span class="c1">//a reactive update after 'anyMethod' is calling</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="router">router</h3>
+
+<p>There are a basic implamentation at <a href="https://github.com/ferrugemjs/router">ferrugemjs-router</a>.</p>
+
+<h3 id="template-stuff">template stuff</h3>
+
+<h4 id="if">if</h4>
+
+<p>Conditional render with if.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">if=</span><span class="s">"this.name==='test'"</span><span class="nt">&gt;</span>name is test<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="tag-if">tag if</h4>
+
+<p>conditional flow with tag if condition.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;if</span> <span class="na">condition=</span><span class="s">"this.name==='test'"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>name is test<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/if&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="tags-ifelse">Tags if,else</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;if</span> <span class="na">condition=</span><span class="s">"this.name==='test'"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>name is test<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;else&gt;</span>
+      	<span class="nt">&lt;span&gt;</span>I dont know you!<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/else&gt;</span>
+    <span class="nt">&lt;/if&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="tags-ifelseif">Tags if,elseif</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;if</span> <span class="na">condition=</span><span class="s">"this.name==='test'"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>name is test<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;elseif</span> <span class="na">condition=</span><span class="s">"this.name==='test2'"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>ok, you are test2<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/elseif&gt;</span>
+    <span class="nt">&lt;/if&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="tags-ifelseifelse">Tags if,elseif,else</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;if</span> <span class="na">condition=</span><span class="s">"this.name==='test'"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>name is test<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;elseif</span> <span class="na">condition=</span><span class="s">"this.name==='test2'"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>ok, you are test2<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/elseif&gt;</span>
+      <span class="nt">&lt;else&gt;</span>
+        <span class="nt">&lt;span&gt;</span>I dont know you!<span class="nt">&lt;/span&gt;</span> 
+      <span class="nt">&lt;/else&gt;</span>
+    <span class="nt">&lt;/if&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="loop-render-with-each">Loop render with each</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">each=</span><span class="s">"item in this.itens"</span><span class="nt">&gt;</span>${item.name}<span class="nt">&lt;/li&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="loop-render-with-a-custom-index">Loop render with a custom index</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">each=</span><span class="s">"item,$index in this.itens"</span><span class="nt">&gt;</span>${$index} - ${item.name}<span class="nt">&lt;/li&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="tag-for-each">Tag for each</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;for</span> <span class="na">each=</span><span class="s">"item in this.itens"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li&gt;</span>${item.name}<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/for&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="tag-for-each-with-index">Tag for each with index</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;for</span> <span class="na">each=</span><span class="s">"item,$index in this.itens"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li&gt;</span>${$index} - ${item.name}<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/for&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="skip">skip</h4>
+
+<p>Conditional children render with skip.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">skip=</span><span class="s">"this.name==='test'"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;</span>name is test<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<p>This is util when working with libs that dinamicaly insert itens into that node as <a href="https://select2.github.io/">select2</a>, <a href="https://selectize.github.io/selectize.js/">selectize</a> and others.</p>
+
+<h4 id="import-other-module">import other module</h4>
+
+<p>eg.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./example/hello-world"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>My First APP with ${this.title}<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;hello-world</span> <span class="na">name=</span><span class="s">"C-3PO"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="give-an-alias-in-module-import-statement">give an alias in module import statement</h4>
+
+<p>eg.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./example/hello-world as sea-bienvenido"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>My First APP with ${this.title}<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;sea-bienvenido</span> <span class="na">name=</span><span class="s">"C-3PO"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="import-a-css-file">import a css file</h4>
+
+<p>You need “plugin-css” for jspm or equivalent if you are using requirejs.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="c">&lt;!--if using 'plugin-css' systemjs--&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./hello-world.css!"</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--if using commons css plugins to requirejs--&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"style!./hello-world"</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--to others commons css plugins--&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"css!./hello-world.css"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>My First APP with ${this.title}<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="embed-a-style-tag">embed a style tag</h4>
+
+<p>eg.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+    <span class="nc">.especial-tag</span><span class="p">{</span>
+    	<span class="nl">background-color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"especial-tag"</span><span class="nt">&gt;</span>My First APP with ${this.title}<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="change-the-css-classname">change the css className</h4>
+
+<p>eg.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+    <span class="nc">.my-custom-classname</span><span class="p">{</span>
+      <span class="nl">background-color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"my-custom-classname"</span><span class="nt">&gt;</span>My element with a custom className<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="change-the-css-classname-with-expression">change the css className with expression</h4>
+
+<p>eg.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+    <span class="nc">.style1</span><span class="p">{</span>
+      <span class="nl">background-color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.style2</span><span class="p">{</span>
+      <span class="nl">background-color</span><span class="p">:</span><span class="no">blue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.style3</span><span class="p">{</span>
+      <span class="nl">background-color</span><span class="p">:</span><span class="no">green</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"${'my-custom-classname '+this.customStyle}"</span><span class="nt">&gt;</span>My element with a custom className by expression<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="set-where-the-content-of-element-must-be-placed">set where the content of element must be placed</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!--hello-world.html--&gt;</span>
+<span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;h1&gt;</span>
+  <span class="nt">&lt;content/&gt;</span>
+ <span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+<p>Bellow is as “hello-world.html” will be used.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./example/hello-world"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;hello-world&gt;</span>
+            Good night!
+      <span class="nt">&lt;/hello-world&gt;</span> 
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="import-other-libraryscript">import other library/script</h4>
+
+<p>eg.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"moment"</span> <span class="na">type=</span><span class="s">"script"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;span&gt;</span>${moment().format('DD/MM/YYYY')}<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="import-other-ui-library-as-a-namespace">import other ui library as a namespace</h4>
+
+<p>It is a basic example, but there are a example more elaborate at <a href="https://github.com/ferrugemjs/router">ferrugemjs-router</a>.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"ui-vendor as ui"</span> <span class="na">type=</span><span class="s">"namespace"</span><span class="nt">/&gt;</span>	
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;span&gt;</span>using a ui library<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;ui:progress-bar/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="preserve-a-element-instance">preserve a element instance</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./test-comp"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;for</span> <span class="na">each=</span><span class="s">"item in this.itens"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;test-comp</span> <span class="na">key:id=</span><span class="s">"${item.id}"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/for&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+<p>You shouldnt use this every moment, but it is recomended to use in a  interation with tag “for” ou instruction “each”.</p>
+
+<h4 id="associate-a-controller-method-to-dom-event">associate a controller method to DOM event</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">click.trigger=</span><span class="s">"this.showName"</span><span class="nt">&gt;</span>show my name!<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="controller-method-to-dom-event-with-paramaters">controller method to DOM event with paramaters</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">click.trigger=</span><span class="s">"this.showName('test')"</span><span class="nt">&gt;</span>show my name!<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="camelcase-method-or-attribute">camelCase method or attribute</h4>
+
+<p>to access a camelCase method or attribute from template use slashes ‘-‘.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./test-comp"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;test-comp</span> <span class="na">full-name=</span><span class="s">"test"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="controller-method-into-a-custom-element-event">controller method into a custom element event</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./test-comp"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;test-comp</span> <span class="na">on-change-name.subscribe=</span><span class="s">"this.showName"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="composition">composition</h3>
+
+<p>with composition you need  use the same id an key:id to load the view.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;compose</span> <span class="na">id=</span><span class="s">"_unique_id_"</span> <span class="na">key:id=</span><span class="s">"_unique_id"</span> <span class="na">view:from=</span><span class="s">"path_to_dinamic_module/module_to_loader"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="custom-view-model">custom view-model</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!--view-one.html--&gt;</span>
+<span class="nt">&lt;template</span> <span class="na">view-model=</span><span class="s">"./universal-view-model"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>VIEW ONE<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;span&gt;</span>bla,bla,bla....<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!--view-two.html--&gt;</span>
+<span class="nt">&lt;template</span> <span class="na">view-model=</span><span class="s">"./universal-view-model"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>VIEW TWO<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>lol lol lol<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"logo.png"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="template-viewmodel-less">template viewmodel-less</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">no-view-model=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>NO viewmodel<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="function-representation">function representation</h4>
+
+<p>If you have a function with a “export default” you can represent it in your template with a tag.</p>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span><span class="p">(</span><span class="nx">log</span><span class="err">:</span><span class="p">{}){</span> 
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">log</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./myfunctionlog as fn-log"</span> <span class="na">type=</span><span class="s">"script"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;fn-log</span> <span class="na">msg=</span><span class="s">"it is alive"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre>
+</div>
+<p>other example</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="c1">//make your own router interface</span>
+<span class="k">import</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"page"</span><span class="p">);</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">config</span><span class="err">:</span><span class="p">{</span><span class="nl">path</span><span class="p">:</span><span class="kr">string</span><span class="p">,</span><span class="nx">setHandler</span><span class="err">:</span><span class="nb">Function</span><span class="p">})</span><span class="o">=&gt;</span><span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">path</span> <span class="o">&amp;&amp;</span> <span class="nx">config</span><span class="p">.</span><span class="nx">setHandler</span><span class="p">){</span>
+		<span class="nx">page</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">path</span><span class="p">,</span><span class="nx">context</span><span class="o">=&gt;</span><span class="p">{</span>
+			<span class="nx">config</span><span class="p">.</span><span class="nx">setHandler</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">);</span>
+		<span class="p">});</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="nx">page</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>using</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"../commons/router as add-router"</span> <span class="na">type=</span><span class="s">"script"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;add-router</span> <span class="na">path=</span><span class="s">"/user/:id"</span> <span class="na">set-handler=</span><span class="s">"this.edit"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>	
+</code></pre>
+</div>
+
+<h3 id="power-ups">power ups!</h3>
+
+<p>When you need more power then…</p>
+
+<h4 id="tag-script">tag script</h4>
+
+<p>useful when working with some jquery plugins.</p>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"jquery as jq"</span> <span class="na">type=</span><span class="s">"script"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;div&gt;</span>
+   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"test"</span><span class="nt">&gt;&lt;/span&gt;</span>
+   <span class="nt">&lt;script&gt;</span>
+ 	jq(".test").hide();
+   <span class="nt">&lt;/script&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>	
+</code></pre>
+</div>
+
+<h4 id="conditional-script">conditional script</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"jquery as jq"</span> <span class="na">type=</span><span class="s">"script"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;div&gt;</span>
+   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"test"</span><span class="nt">&gt;&lt;/span&gt;</span>
+   <span class="nt">&lt;script</span> <span class="na">if=</span><span class="s">"!this.hidden"</span><span class="nt">&gt;</span>
+ 	jq(".test").hide();
+   <span class="nt">&lt;/script&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>	
+</code></pre>
+</div>
+
+<h4 id="scope-into-script">scope into script</h4>
+
+<p>eg.</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+ <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"jquery as jq"</span> <span class="na">type=</span><span class="s">"script"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;div&gt;</span>
+   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"test"</span><span class="nt">&gt;&lt;/span&gt;</span>
+   <span class="nt">&lt;script</span> <span class="na">if=</span><span class="s">"!this.hidden"</span><span class="nt">&gt;</span>
+ 	  jq(".test").hide();
+	  this.hidden = true;
+   <span class="nt">&lt;/script&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>	
+</code></pre>
+</div>
+
+</div>
+
+<ul style="float:left;width:350px">
+  <li><a href="https://ferrugemjs.github.io/home-page/#modules--custom-tags">modules &amp; custom tags</a></li>
+  <li><a href="https://ferrugemjs.github.io/home-page/#module-lifecycle">module lifecycle</a>
+    <ul>
+      <li><a href="https://ferrugemjs.github.io/home-page/#attached">attached</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#detached">detached</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#setattribute-name">set+attribute name</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#component-refresh-from-modelview">component refresh from modelview</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#component-refresh-with-state">refresh with state</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#component-shouldupdate">shouldUpdate</a></li>
+    </ul>
+  </li>
+  <li>
+	binding
+    <ul>
+		<li><a href="https://ferrugemjs.github.io/home-page/#one-way-data-binding">one-way data binding</a></li>
+      	<li><a href="https://ferrugemjs.github.io/home-page/#event-binding">event binding</a></li>
+		<li><a href="https://ferrugemjs.github.io/home-page/#manual-event-reactivity">manual event reactivity</a></li>     
+	</ul>
+  </li>	
+
+  <li><a href="https://ferrugemjs.github.io/home-page/#router">router</a></li>
+  <li><a href="https://ferrugemjs.github.io/home-page/#template-stuff">template stuff</a>
+    <ul>
+      <li><a href="https://ferrugemjs.github.io/home-page/#if">if</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#tag-if">tag if</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#tags-ifelse">Tags if,else</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#tags-ifelseif">Tags if,elseif</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#tags-ifelseifelse">Tags if,elseif,else</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#loop-render-with-each">Loop render with each</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#loop-render-with-a-custom-index">Loop render with a custom index</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#tag-for-each">Tag for each</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#tag-for-each-with-index">Tag for each with index</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#skip">skip</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#import-other-module">import other module</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#give-an-alias-in-module-import-statement">give an alias in module import statement</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#import-a-css-file">import a css file</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#embed-a-style-tag">embed a style tag</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#change-the-css-className">change the css className</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#change-the-css-classname-with-expression">change the css className with expression</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#set-where-the-content-of-element-must-be placed">set where the content of element must be placed</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#import-other-libraryscript">import other library/script</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#import-other-ui-library-as-a-namespace">import other ui library as a namespace</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#preserve-a-element-instance">preserve a element instance</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#associate-a-controller-method-to-DOM-event">associate a controller method to DOM event</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#controller-method-to-DOM-event-with paramaters">controller method to DOM event with paramaters</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#camelcase-method-or-attribute">camelCase method or attribute</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#controller-method-into-a-custom-element event">controller method into a custom element event</a></li>
+    </ul>
+  </li>
+  <li><a href="https://ferrugemjs.github.io/home-page/#composition">composition</a>
+    <ul>
+      <li><a href="https://ferrugemjs.github.io/home-page/#custom-view-model">custom view-model</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#template-viewmodel-less">template viewmodel-less</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#function-representation">function representation</a></li>
+    </ul>
+  </li>
+  <li><a href="https://ferrugemjs.github.io/home-page/#power-ups">power ups!</a>
+    <ul>
+      <li><a href="https://ferrugemjs.github.io/home-page/#tag-script">tag script</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#conditional-script">conditional script</a></li>
+      <li><a href="https://ferrugemjs.github.io/home-page/#scope-into-script">scope into script</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+      <footer class="site-footer" style="float:left;width:100%">
+        
+          <span class="site-footer-owner"><a href="https://github.com/ferrugemjs/home-page">home-page</a> is maintained by <a href="https://github.com/ferrugemjs">ferrugemjs</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
       </footer>
     </section>
-	<script type="text/javascript">
-		Sunlight.highlightAll({lineNumbers:false});
-	</script>
-</body>
-</html>
+
+    
+  
+
+</body></html>
