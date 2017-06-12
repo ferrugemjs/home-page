@@ -1,8 +1,3 @@
----
-title: ferrugemjs
-author: FerrugemJS.
----
-
 ## FerrugemJS
 
 ![Ferrugem Logo](/assets/img/new-logo-home.png) 
