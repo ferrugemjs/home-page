@@ -390,7 +390,7 @@ eg.
 
 #### import a css file
 
-You need "plugin-css" for jspm or equivalent if you are using requirejs.
+You need "plugin-css" for jspm or equivalent if you are using requirejs or webpack.
 
 eg.
 ``` xml
