@@ -13,6 +13,8 @@ https://ferrugemjs.github.io/home-page/documentation.html
 ### how to start
 clone
 [skeleton-typescript](https://github.com/ferrugemjs/skeleton-typescript) (recomended way)
+<p>or
+[skeleton-webpack](https://github.com/ferrugemjs/skeleton-webpack) (webpack + babel)
 
 ### individual install
 
