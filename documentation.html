@@ -365,7 +365,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 </code></pre>
 </div>
 
-<h4 id="import-a-css-file">import a css file</h4>
+<h4 id="import-a-css-file">import a css/less/scss file</h4>
 
 <p>You need “plugin-css” for jspm or equivalent if you are using requirejs.</p>
 
@@ -375,8 +375,10 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
     <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./hello-world.css!"</span><span class="nt">/&gt;</span>
     <span class="c">&lt;!--if using commons css plugins to requirejs--&gt;</span>
     <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"style!./hello-world"</span><span class="nt">/&gt;</span>
-    <span class="c">&lt;!--to others commons css plugins--&gt;</span>
-    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"css!./hello-world.css"</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--to webpack loaders--&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./hello-world.css"</span><span class="nt">/&gt;</span>
+	<span class="c">&lt;!--to webpack lass loaders--&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">from=</span><span class="s">"./hello-world.scss"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;h1&gt;</span>My First APP with ${this.title}<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;/template&gt;</span>
 </code></pre>

@@ -388,7 +388,7 @@ eg.
 
 
 
-#### import a css file
+#### import a css/less/scss file
 
 You need "plugin-css" for jspm or equivalent if you are using requirejs or webpack.
 
@@ -401,6 +401,10 @@ eg.
     <require from="style!./hello-world"/>
     <!--to others commons css plugins-->
     <require from="css!./hello-world.css"/>
+	<!--to webpack loaders-->
+    <require from="./hello-world.css"/>
+	<!--to webpack "scss" loaders-->
+    <require from="./hello-world.scss"/>
     <h1>My First APP with ${this.title}</h1>
 </template>
 ```
