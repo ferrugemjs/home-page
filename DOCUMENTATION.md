@@ -46,6 +46,10 @@ now, we can importe into other template
 
 ### module lifecycle
 
+
+![Lifecycle Diagram](/assets/img/lifecycle.png)
+
+
 #### attached
 
 By implementing the method your module will be prompted for it once your component is in "DOM".
