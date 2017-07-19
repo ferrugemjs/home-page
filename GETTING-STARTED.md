@@ -62,6 +62,16 @@ platform
     );
 ```
 
+You still need choose/configure a transpiler (recomended, see [documentation modules & custom tags section](DOCUMENTATION.md)) or use "functions" with define as below:
+``` javascript
+define(["exports"], function (exports) {
+	exports.ModuleA = function(){};
+});
+```
+
+
+
+
 #### with jspm
 
 jspm install npm:ferrugemjs
@@ -119,3 +129,5 @@ now, we can importe into other template
     </div>
 </template>
 ```
+
+Your application is ready and running in http://127.0.0.1:3333 if you are using [skeleton-typescript](https://github.com/ferrugemjs/skeleton-typescript) .

@@ -43,6 +43,39 @@ now, we can importe into other template
 </template>
 ```
 
+Otherwise a module can be written in different forms as below:
+
+### javascript basic function or “immediately invoked” function with requirejs
+``` javascript
+define(["require", "exports"], function (require, exports) {
+    "use strict";
+    var ModuleA = (function () {
+        function ModuleA() {
+            this.title = "test!";
+        }
+        return ModuleA;
+    }());
+    exports.ModuleA = ModuleA;
+});
+```
+
+### With "new" javascript class syntax with babel or other prefer transpile
+
+export class ModuleA{
+    constructor(){
+      this.title = "test!";
+    }
+}
+
+### We recommend Typescript to large/medium projects because language features
+
+``` typescript
+export class ModuleA{
+    private title:string;
+    constructor(){
+      this.title = "test!";
+    }
+}
 
 ### module lifecycle
 
