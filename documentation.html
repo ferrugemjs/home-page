@@ -99,7 +99,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
   <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
   <span class="nx">doAnyThing</span><span class="p">(){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">"new Title"</span><span class="p">;</span>
-    <span class="nx">refresh</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -114,7 +114,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
   <span class="k">private</span> <span class="nx">title</span><span class="err">:</span><span class="kr">string</span><span class="p">;</span>
   <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
   <span class="nx">doAnyThing</span><span class="p">(){</span>
-    <span class="nx">refresh</span><span class="p">({</span><span class="na">title</span><span class="p">:</span><span class="s2">"new Title"</span><span class="p">});</span><span class="c1">//equivalent to "setState of react"</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">({</span><span class="na">title</span><span class="p">:</span><span class="s2">"new Title"</span><span class="p">});</span><span class="c1">//equivalent to "setState of react"</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -129,7 +129,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
   <span class="k">private</span> <span class="nx">title</span><span class="err">:</span><span class="kr">string</span><span class="p">;</span>
   <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
   <span class="nx">doAnyThing</span><span class="p">(){</span>
-    <span class="nx">refresh</span><span class="p">({</span><span class="na">title</span><span class="p">:</span><span class="s2">"new Title"</span><span class="p">});</span><span class="c1">//equivalent to "setState of react"</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">({</span><span class="na">title</span><span class="p">:</span><span class="s2">"new Title"</span><span class="p">});</span><span class="c1">//equivalent to "setState of react"</span>
   <span class="p">}</span>
   <span class="k">private</span> <span class="nx">shouldUpdate</span><span class="p">(</span><span class="nx">new_props</span><span class="err">:</span><span class="nx">ISubComp</span> <span class="o">=</span> <span class="p">{})</span><span class="err">:</span><span class="kr">boolean</span><span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">!=</span> <span class="nx">new_props</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
