@@ -131,7 +131,7 @@ export class ModuleA{
   private refresh:Function;//necessary if you want avoid typescript warnings
   doAnyThing(){
     this.title = "new Title";
-    refresh();
+    this.refresh();
   }
 }
 ```
@@ -146,7 +146,7 @@ export class ModuleA{
   private title:string;
   private refresh:Function;//necessary if you want avoid typescript warnings
   doAnyThing(){
-    refresh({title:"new Title"});//equivalent to "setState of react"
+    this.refresh({title:"new Title"});//equivalent to "setState of react"
   }
 }
 ```
@@ -161,7 +161,7 @@ export class ModuleA{
   private title:string;
   private refresh:Function;//necessary if you want avoid typescript warnings
   doAnyThing(){
-    refresh({title:"new Title"});//equivalent to "setState of react"
+    this.refresh({title:"new Title"});//equivalent to "setState of react"
   }
   private shouldUpdate(new_props:ModuleA):boolean{
     return this.title != new_props.title;
