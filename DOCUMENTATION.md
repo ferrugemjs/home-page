@@ -395,7 +395,7 @@ eg.
 This is util when working with libs that dinamicaly insert itens into that node as [select2](https://select2.github.io/), [selectize](https://selectize.github.io/selectize.js/) and others.
 
 
-#### conditional checked,selected,disabled,enable
+#### conditional attribute
 
 
 eg.
@@ -404,10 +404,10 @@ eg.
   <div>
     <span>name is test</span>
 	<input type="checkbox" checked="${this.name=='test'}"/>
-	<input type="text" disable="${this.maxPowerFool > 100}"/>
+	<input type="text" disable.if="this.maxPowerFool > 100"/>
 	<select>
 		<option value="1">one</option>
-		<option value="2" selected="${this.myIndex==2}">two</option>
+		<option value="2" selected.if="this.myIndex === 2">two</option>
 		<option value="3">three</option>
 	</select>
   </div>
