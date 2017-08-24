@@ -60,13 +60,13 @@ define(["require", "exports"], function (require, exports) {
 ```
 
 ### With "new" javascript class syntax with babel or other prefer transpile
-
+``` javascript
 export class ModuleA{
     constructor(){
       this.title = "test!";
     }
 }
-
+```
 ### We recommend Typescript to large/medium projects because language features
 
 ``` typescript
@@ -76,6 +76,7 @@ export class ModuleA{
       this.title = "test!";
     }
 }
+```
 
 ### module lifecycle
 
@@ -83,40 +84,40 @@ export class ModuleA{
 ![Lifecycle Diagram](/assets/img/lifecycle.png)
 
 
-#### attached
+#### connectedCallback
 
 By implementing the method your module will be prompted for it once your component is in "DOM".
 
 eg.
 ``` typescript
-attached(){
+connectedCallback(){
  console.log('im in DOM');
 }
 ```
 
 
 
-#### detached
+#### disconnectedCallback
 
 By implementing the method your module will be prompted for it once your component is detached from "DOM".
 
 eg.
 ``` typescript
-detached(){
+disconnectedCallback(){
  console.log('im out');
 }
 ```
 
 
 
-#### set+attribute name
+#### attributeChangedCallback
 
-By implementing the method with the module attribute in CamelCase format your module will be notified when there is any change to the way template attribute.
+By implementing the method your module will be notified when there is any change to the way template attribute.
 
 eg.
 ``` typescript
-setName(name:string){
- this.name = name;
+attributeChangedCallback(attrName, oldVal, newVal){
+ console.log(`attibute ${attrName} has changed!`);
 }
 ```
 
