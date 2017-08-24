@@ -83,7 +83,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 <p>By implementing the method your module will be notified when there is any change to the way template attribute.</p>
 
 <p>eg.</p>
-<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">attributeChangedCallback</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span><span class="kr">string</span><span class="p">){</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">attributeChangedCallback</span><span class="p">(</span><span class="nx">attrName, oldVal, newVal</span><span class="p">){</span>
  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre>
