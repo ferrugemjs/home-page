@@ -84,7 +84,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 
 <p>eg.</p>
 <div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">attributeChangedCallback</span><span class="p">(</span><span class="nx">attrName, oldVal, newVal</span><span class="p">){</span>
- <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+ <span class="k">console</span><span class="p">.</span><span class="nx">log(</span> <span class="o">attrName</span> <span class="nx">name</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -120,9 +120,9 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 </code></pre>
 </div>
 
-<h4 id="component-shouldupdate">component shouldUpdate</h4>
+<h4 id="component-shouldupdate">component shouldUpdateCallback</h4>
 
-<p>By implementing the method “shouldUpdate” you can decide if a component should refresh or not by returning true or false.</p>
+<p>By implementing the method “shouldUpdateCallback” you can decide if a component should refresh or not by returning true or false.</p>
 
 <p>eg.</p>
 <div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="kr">class</span> <span class="nx">ModuleA</span><span class="p">{</span>
@@ -131,7 +131,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
   <span class="nx">doAnyThing</span><span class="p">(){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">({</span><span class="na">title</span><span class="p">:</span><span class="s2">"new Title"</span><span class="p">});</span><span class="c1">//equivalent to "setState of react"</span>
   <span class="p">}</span>
-  <span class="k">private</span> <span class="nx">shouldUpdate</span><span class="p">(</span><span class="nx">new_props</span><span class="err">:</span><span class="nx">ISubComp</span> <span class="o">=</span> <span class="p">{})</span><span class="err">:</span><span class="kr">boolean</span><span class="p">{</span>
+  <span class="k">private</span> <span class="nx">shouldUpdateCallback</span><span class="p">(</span><span class="nx">new_props</span><span class="err">:</span><span class="nx">ISubComp</span> <span class="o">=</span> <span class="p">{})</span><span class="err">:</span><span class="kr">boolean</span><span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">!=</span> <span class="nx">new_props</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
