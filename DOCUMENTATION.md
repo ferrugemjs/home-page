@@ -152,22 +152,15 @@ export class ModuleA{
 }
 ```
 
-#### component shouldUpdate
+#### component shouldUpdateCallback
 
-By implementing the method "shouldUpdate" you can decide if a component should refresh or not by returning true or false.
+By implementing the method "shouldUpdateCallback" you can decide if a component should refresh or not by returning true or false.
 
 eg.
 ``` typescript
-export class ModuleA{
-  private title:string;
-  private refresh:Function;//necessary if you want avoid typescript warnings
-  doAnyThing(){
-    this.refresh({title:"new Title"});//equivalent to "setState of react"
+  private shouldUpdateCallback(new_props:ModuleA):boolean{
+    return this.title !== new_props.title;
   }
-  private shouldUpdate(new_props:ModuleA):boolean{
-    return this.title != new_props.title;
-  }
-}
 ```
 
 #### one-way data binding
