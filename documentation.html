@@ -56,34 +56,34 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 
 <h3 id="module-lifecycle">module lifecycle</h3>
 <p><img width="521px" src="./assets/imgs/lifecycle.png" alt="Lifecycle Diagram"></p>
-<h4 id="attached">attached</h4>
+<h4 id="attached">connectedCallback</h4>
 
 <p>By implementing the method your module will be prompted for it once your component is in “DOM”.</p>
 
 <p>eg.</p>
-<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">attached</span><span class="p">(){</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">connectedCallback</span><span class="p">(){</span>
  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'im in DOM'</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
-<h4 id="detached">detached</h4>
+<h4 id="detached">disconnectedCallback</h4>
 
 <p>By implementing the method your module will be prompted for it once your component is detached from “DOM”.</p>
 
 <p>eg.</p>
-<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">detached</span><span class="p">(){</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">disconnectedCallback</span><span class="p">(){</span>
  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'im out'</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
-<h4 id="setattribute-name">set+attribute name</h4>
+<h4 id="setattribute-name">attributeChangedCallback</h4>
 
-<p>By implementing the method with the module attribute in CamelCase format your module will be notified when there is any change to the way template attribute.</p>
+<p>By implementing the method your module will be notified when there is any change to the way template attribute.</p>
 
 <p>eg.</p>
-<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">setName</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span><span class="kr">string</span><span class="p">){</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="nx">attributeChangedCallback</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span><span class="kr">string</span><span class="p">){</span>
  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre>
