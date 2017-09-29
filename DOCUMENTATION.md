@@ -112,7 +112,7 @@ disconnectedCallback(){
 
 #### attributeChangedCallback
 
-By implementing the method your module will be notified when there is any change to the way template attribute.
+By implementing these method your module will be notified when any attribute is changed.
 
 eg.
 ``` typescript
