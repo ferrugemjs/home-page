@@ -140,7 +140,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 
 <h4 id="one-way-data-binding">one-way data binding</h4>
 
-<p>When you set the ‘value=${name}’ in a input component it will set “value” attribute in element after a controller refresh.</p>
+<p>With 'value="${this.name}"' in a input it will set the "value" attribute after a controller refresh.</p>
 
 <p>eg.</p>
 <div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
@@ -154,7 +154,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 
 <h4 id="event-binding">event binding</h4>
 
-<p>When you set the “keyup.bind” in a input component it will change the “name” attribute in controller after a keyup event.</p>
+<p>With 'keyup.bind="this.name"' in a input it will change the "name" attribute in controller after a keyup event.</p>
 
 <p>eg.</p>
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
