@@ -165,7 +165,7 @@ eg.
 
 #### one-way data binding
 
-When you set the 'value=${name}' in a input component it will set "value" attribute in element after a controller refresh.
+With 'value="${this.name}"' in a input it will set the "value" attribute after a controller refresh.
 
 eg.
 ``` html
@@ -181,7 +181,7 @@ eg.
 
 #### event binding
 
-When you set the "keyup.bind" in a input component it will change the "name" attribute in controller after a keyup event.
+With 'keyup.bind="this.name"' in a input it will change the "name" attribute in controller after a keyup event.
 
 eg.
 ``` xml
