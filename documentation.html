@@ -120,6 +120,19 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 </code></pre>
 </div>
 
+<h4 id="component-refresh-with-state">refresh with callback</h4>
+
+<p>eg.</p>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">export</span> <span class="kr">class</span> <span class="nx">ModuleA</span><span class="p">{</span>
+  <span class="k">private</span> <span class="nx">inc</span><span class="err">:</span><span class="kr">number</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nx">refresh</span><span class="err">:</span><span class="nb">Function</span><span class="p">;</span><span class="c1">//necessary if you want avoid typescript warnings</span>
+  <span class="nx">increment</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">refresh</span><span class="p">( state => ({</span><span class="na">inc</span><span class="p">:</span><span class="s2">this.inc + 1</span><span class="p">}));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
 <h4 id="component-shouldupdate">component shouldUpdateCallback</h4>
 
 <p>By implementing the method “shouldUpdateCallback” you can decide if a component should refresh or not by returning true or false.</p>

@@ -152,6 +152,21 @@ export class ModuleA{
 }
 ```
 
+#### refresh with callback
+
+eg.
+``` typescript
+export class ModuleA{
+  private inc:number=0;
+  private refresh:Function;//necessary if you want avoid typescript warnings
+  private increment(){
+	this.refresh( state => ({
+		inc:state.inc + 2
+	}));
+  }
+}
+```
+
 #### component shouldUpdateCallback
 
 By implementing the method "shouldUpdateCallback" you can decide if a component should refresh or not by returning true or false.
