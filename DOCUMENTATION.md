@@ -668,12 +668,12 @@ eg.
 
 
 
-#### custom view-model
+#### custom model
 
 eg.
 ``` xml
 <!--view-one.html-->
-<template view-model="./universal-view-model">
+<template model="./universal-view-model">
   <div>
     <h1>VIEW ONE</h1>
     <span>bla,bla,bla....</span>
@@ -682,7 +682,7 @@ eg.
 ```
 ``` xml
 <!--view-two.html-->
-<template view-model="./universal-view-model">
+<template model="./universal-view-model">
   <div>
     <h3>VIEW TWO</h3>
     <p>lol lol lol</p>
@@ -697,7 +697,7 @@ eg.
 
 eg.
 ``` xml
-<template no-view-model="true">
+<template no-model>
   <h1>NO viewmodel</h1>
 </template>
 ```
