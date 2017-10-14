@@ -577,11 +577,11 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 </code></pre>
 </div>
 
-<h4 id="custom-view-model">custom view-model</h4>
+<h4 id="custom-view-model">custom model</h4>
 
 <p>eg.</p>
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!--view-one.html--&gt;</span>
-<span class="nt">&lt;template</span> <span class="na">view-model=</span><span class="s">"./universal-view-model"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;template</span> <span class="na">model=</span><span class="s">"./universal-view-model"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div&gt;</span>
     <span class="nt">&lt;h1&gt;</span>VIEW ONE<span class="nt">&lt;/h1&gt;</span>
     <span class="nt">&lt;span&gt;</span>bla,bla,bla....<span class="nt">&lt;/span&gt;</span>
@@ -590,7 +590,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 </code></pre>
 </div>
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!--view-two.html--&gt;</span>
-<span class="nt">&lt;template</span> <span class="na">view-model=</span><span class="s">"./universal-view-model"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;template</span> <span class="na">model=</span><span class="s">"./universal-view-model"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div&gt;</span>
     <span class="nt">&lt;h3&gt;</span>VIEW TWO<span class="nt">&lt;/h3&gt;</span>
     <span class="nt">&lt;p&gt;</span>lol lol lol<span class="nt">&lt;/p&gt;</span>
@@ -603,7 +603,7 @@ By convention FerrugemJS know that “module-a.ts” is a controller file and �
 <h4 id="template-viewmodel-less">template viewmodel-less</h4>
 
 <p>eg.</p>
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">no-view-model=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">no-model</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h1&gt;</span>NO viewmodel<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;/template&gt;</span>
 </code></pre>
