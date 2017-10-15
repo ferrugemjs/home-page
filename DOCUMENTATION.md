@@ -661,7 +661,7 @@ eg.
 ``` xml
 <template>
   <div>
-    <compose id="_unique_id_" key:id="_unique_id" view:from="path_to_dinamic_module/module_to_loader"/>
+    <compose view:from="path_to_dinamic_module/module_to_loader"/>
   </div>
 </template>
 ```
