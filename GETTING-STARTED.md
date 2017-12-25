@@ -148,14 +148,13 @@ in "index.html"
 ```
 in "webpack.config.js"
 ``` javascript
-		{
-        		test: /\.pug$/,
-        		include: path.join(__dirname, 'app'),
-        		loaders: [
-					{loader:'ferrugemjs-loader' ,options:{ templateExtension:".pug" }},
-	        			'pug-html-loader'
-        			]
-      		}
+{
+ test: /\.pug$/,
+ loaders: [
+    {loader:'ferrugemjs-loader' ,options:{ templateExtension:".pug" }},
+    'pug-html-loader'
+    ]
+}
 ```
 
 
