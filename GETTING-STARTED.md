@@ -137,7 +137,7 @@ now, we can importe into other template
 Your application is ready and running in http://127.0.0.1:3333 if you are using [skeleton-typescript](https://github.com/ferrugemjs/skeleton-typescript) .
 
 
-### with [pug](https://pugjs.org/api/getting-started.html) template format or other
+### others template format, example with [pug](https://pugjs.org/api/getting-started.html):
 
 ``` 
 npm install --save-dev pug pug-html-loader
