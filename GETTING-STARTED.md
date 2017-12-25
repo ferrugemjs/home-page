@@ -50,7 +50,11 @@ module: {
     }
  }
 ```
-to work with webpack there is 'ferrugemjs/platform' as a application bootstrapping.
+to work with webpack there is 'ferrugemjs/bootstrapper' as a application bootstrapping.
+``` javascript
+import bootstrapper from "ferrugemjs/bootstrapper";
+```
+or with 'ferrugemjs/platform' as a application bootstrapping.
 ``` javascript
 import platform from "ferrugemjs/platform";
 import init_app from "./init-app";
@@ -131,3 +135,34 @@ now, we can importe into other template
 ```
 
 Your application is ready and running in http://127.0.0.1:3333 if you are using [skeleton-typescript](https://github.com/ferrugemjs/skeleton-typescript) .
+
+
+### with [pug](https://pugjs.org/api/getting-started.html) template format or other
+
+``` 
+npm install --save-dev pug pug-html-loader
+```
+in "index.html"
+``` html
+ <div app="hello-world/hello-world" template-extension=".pug"></div>
+```
+in "webpack.config.js"
+``` javascript
+		{
+        		test: /\.pug$/,
+        		include: path.join(__dirname, 'app'),
+        		loaders: [
+					{loader:'ferrugemjs-loader' ,options:{ templateExtension:".pug" }},
+	        			'pug-html-loader'
+        			]
+      		}
+```
+
+
+
+
+
+
+
+
+
