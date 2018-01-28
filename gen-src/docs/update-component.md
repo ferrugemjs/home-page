@@ -4,6 +4,10 @@ title: Update component state
 sidebar_label: Update component
 ---
 
+## Update flowchart
+
+![Update flowchart](../img/lifecycle-refresh.png)
+
 ## Refresh function
 
 Use the "refresh" method to update the component from its controller file.

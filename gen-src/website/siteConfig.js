@@ -22,6 +22,7 @@ const siteConfig = {
   baseUrl: '/home-page/' /* base url for your project */,
   projectName: 'FerrugemJS',
   headerLinks: [
+    {doc: 'readme', label: 'About'},
     {doc: 'getting-started', label: 'Doc'},
     {href: 'https://github.com/ferrugemjs/library', label: 'GitHub'},
     //{page: 'help', label: 'Help'},

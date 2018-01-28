@@ -6,9 +6,7 @@ sidebar_label: Lifecycle
 
 ## Component lifecycle
 
-
 ![Lifecycle Diagram](../img/lifecycle.png)
-
 
 ### Component  connectedCallback
 
@@ -36,6 +34,8 @@ disconnectedCallback(){
 
 By implementing the method "shouldUpdateCallback" you can decide if a component should refresh or not by returning true or false.
 
+![Update flowchart](../img/lifecycle-refresh.png)
+
 eg.
 ``` typescript
   private shouldUpdateCallback(new_props:ModuleA):boolean{
@@ -43,9 +43,13 @@ eg.
   }
 ```
 
+
+
 ### Component attributeChangedCallback
 
 By implementing these method your module will be notified when any attribute is changed.
+
+![attributeChangedCallback flowchart](../img/lifecycle-data-change.png)
 
 eg.
 ``` typescript
@@ -53,3 +57,5 @@ attributeChangedCallback(attrName, oldVal, newVal){
  console.log(`attibute ${attrName} has changed!`);
 }
 ```
+
+
