@@ -1,9 +1,7 @@
 {
   "docs": {
     "Getting Started": ["getting-started"],
-    "Installation": ["webpack-install","jspm-install","requirejs-install","individual-install"],
-    "Components": ["components","lifecycle","update-component","data-bind"],
-    "Templating": ["templating","pug-configuration"],
-    "Router":["router"]
+    "Using": ["components","lifecycle","update-component","data-bind","templating"],
+    "Installation": ["webpack-install","jspm-install","requirejs-install","individual-install","pug-configuration"]
   }
 }

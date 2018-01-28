@@ -4,9 +4,9 @@ title: Components
 sidebar_label: Working with components
 ---
 
-## Create components
+## Create component
 
-To create a components witch will be a custom tag do you need two files with same name(eg. "module-a.ts" and "module-a.html").
+To create a component witch will be a custom tag do you need two files with same name(eg. "module-a.ts" and "module-a.html").
 By convention FerrugemJS know that "module-a.ts" is a controller file and "module-a.html" is the view of it and you can easily import it into your main app html file or into other module and use as a component with a custom tag.
 
 eg. 

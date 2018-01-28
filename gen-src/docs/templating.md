@@ -1,6 +1,6 @@
 ---
 id: templating
-title: Templating functions
+title: Template functions
 sidebar_label: Templating
 ---
 

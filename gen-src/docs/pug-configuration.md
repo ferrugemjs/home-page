@@ -1,10 +1,10 @@
 ---
 id: pug-configuration
-title: Working with pug 
-sidebar_label: Working with pug
+title: Working with pugjs
+sidebar_label: Working with pugjs
 ---
 
-## About using other template format
+## About using other template formats
 
 FerrugemJS support working with any template format since it transpile to html format.
 These section will show how to do it with [pugjs](https://pugjs.org/api/getting-started.html) .
