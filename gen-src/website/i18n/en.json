@@ -26,6 +26,8 @@
     "Router": "Router",
     "templating": "Template functions",
     "Templating": "Templating",
+    "todo-list-example": "Todo List Example",
+    "Todo List Example": "Todo List Example",
     "update-component": "Update component state",
     "Update component": "Update component",
     "webpack-install": "With webpack",

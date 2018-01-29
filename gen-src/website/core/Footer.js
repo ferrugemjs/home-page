@@ -62,6 +62,12 @@ class Footer extends React.Component {
             </a>
           </div>
         </section>
+      </footer>
+    );
+  }
+}
+/*
+        </section>
 
         <a
           href="https://code.facebook.com/projects/"
@@ -78,8 +84,6 @@ class Footer extends React.Component {
           Copyright &copy; {currentYear} Facebook Inc.
         </section>
       </footer>
-    );
-  }
-}
+*/      
 
 module.exports = Footer;

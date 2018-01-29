@@ -11,6 +11,8 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
+const Remarkable = require('../../core/Remarkable');
+const hljs = require('highlight.js');
 
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
@@ -81,7 +83,7 @@ class HomeSplash extends React.Component {
           <ProjectTitle />
           <PromoSection>
             <Button href={docUrl('getting-started.html', language)}>Getting Started</Button>
-            <Button href="https://ferrugemjs.github.io/examples/index.html">Example Online</Button>
+            <Button href="#cod_exa_case">Example</Button>
             <Button href="https://github.com/ferrugemjs/library">GitHub</Button>
           </PromoSection>
         </div>
@@ -147,7 +149,7 @@ const TryOut = props => (
         content: 'Talk about trying this out',
         image: imgUrl('docusaurus.svg'),
         imageAlign: 'left',
-        title: 'Try it Out',
+        title: 'Example',
       },
     ]}
   </Block>
@@ -197,14 +199,61 @@ const Showcase = props => {
 };
 
 const CodeExample = props => (
-  <Container
-    padding={['bottom', 'top']}
-    id={props.id}
-    background="light">
-    <h2>Code Example</h2>
-    <p data-height="246" data-theme-id="dark" data-slug-hash="gvYNRz" data-default-tab="html,result" data-user="ferrugemjs" data-embed-version="2" data-pen-title="todo-list" class="codepen">See the Pen <a href="https://codepen.io/ferrugemjs/pen/gvYNRz/">todo-list</a> by ferrugemjs (<a href="https://codepen.io/ferrugemjs">@ferrugemjs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-  </Container>
+<div id="cod_exa_case" className="container paddingBottom paddingTop">
+  <div className="wrapper">
+    <div className="gridBlock">
+      <div className="blockElement fourByGridBlock">
+        <h2>{"Template"}</h2>
+          <Remarkable>
+{`
+\`\`\`xml
+<template>
+  <div>
+    <ol>
+      <li each="todo in this.todos">
+        <em>\${todo}</em>
+      </li>
+    </ol>
+    <input 
+      type="text" 
+      value="\${new String('')}" 
+      change.bind="this.desc"/>
+  </div>
+</template>
+\`\`\`
+`} 
+          </Remarkable>
+      </div>
+      <div className="blockElement fourByGridBlock">
+        <h2>{"JavaScript"}</h2>
+          <Remarkable>
+{`
+\`\`\`javascript
+export class TodoList{  
+  constructor(){
+    this.todos = ['do a test'];
+  }
+  set desc(desc){
+    if(desc.trim()){
+      this.todos.push(desc);
+    }
+  }
+}
+\`\`\`
+`}  
+          </Remarkable>
+      </div>
+      <div className="blockElement fourByGridBlock">
+        <h2>{"Result"}</h2>
+        <iframe 
+          src="https://ferrugemjs.github.io/examples/index.html" 
+          border="0"
+          style={{height:"260px",width:"100%"}}>
+        </iframe>
+      </div>       
+    </div>
+  </div>   
+</div>
 );
 
 class Index extends React.Component {
@@ -218,6 +267,7 @@ class Index extends React.Component {
           <Features />
           <FeatureCallout />          
         </div>
+        <CodeExample/>
       </div>
     );
   }
