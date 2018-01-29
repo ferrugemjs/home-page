@@ -1,0 +1,12 @@
+gen-src/website/node_modules/
+gen-src/website/package-lock.json
+.DS_Store
+lib/core/metadata.js
+lib/core/MetadataBlog.js
+gen-src/website/translated_docs
+gen-src/website/build/
+gen-src/website/yarn.lock
+gen-src/website/node_modules
+
+gen-src/website/i18n/*
+!gen-src/website/i18n/en.json

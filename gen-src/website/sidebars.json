@@ -1,0 +1,7 @@
+{
+  "docs": {
+    "Getting Started": ["getting-started"],
+    "Using": ["components","lifecycle","update-component","data-bind","templating"],
+    "Installation": ["webpack-install","jspm-install","requirejs-install","individual-install","pug-configuration"]
+  }
+}
