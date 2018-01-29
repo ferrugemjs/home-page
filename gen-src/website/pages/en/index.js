@@ -202,7 +202,7 @@ const CodeExample = props => (
 <div id="cod_exa_case" className="container paddingBottom paddingTop">
   <div className="wrapper">
     <div className="gridBlock">
-      <div className="blockElement fourByGridBlock">
+      <div className="blockElement threeByGridBlock">
         <h2>{"Template"}</h2>
           <Remarkable>
 {`
@@ -224,7 +224,7 @@ const CodeExample = props => (
 `} 
           </Remarkable>
       </div>
-      <div className="blockElement fourByGridBlock">
+      <div className="blockElement threeByGridBlock">
         <h2>{"JavaScript"}</h2>
           <Remarkable>
 {`
@@ -243,7 +243,7 @@ export class TodoList{
 `}  
           </Remarkable>
       </div>
-      <div className="blockElement fourByGridBlock">
+      <div className="blockElement threeByGridBlock">
         <h2>{"Result"}</h2>
         <iframe 
           src="https://ferrugemjs.github.io/examples/index.html" 
