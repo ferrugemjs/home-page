@@ -16,6 +16,7 @@ const users = [
 ];
 
 const siteConfig = {
+  users,
   title: 'FerrugemJS' /* title for your website */,
   tagline: 'A simple, reactive, conventional and non-intrusive library.',
   url: 'https://ferrugemjs.github.io' /* your website url */,
@@ -25,10 +26,10 @@ const siteConfig = {
     {doc: 'readme', label: 'About'},
     {doc: 'getting-started', label: 'Doc'},
     {href: 'https://github.com/ferrugemjs/library', label: 'GitHub'},
+    {href: 'https://gitter.im/ferrugemjs/questions', label: 'Help'},
     //{page: 'help', label: 'Help'},
     //{blog: false, label: 'Blog'},
   ],
-  users,
   /* path to images for header/footer */
   headerIcon: 'img/ferrugemjs-logo.png',
   footerIcon: 'img/ferrugemjs-logo.png',
@@ -51,7 +52,7 @@ const siteConfig = {
   },
   scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/ferrugemjs/library',
+  repoUrl: 'https://github.com/ferrugemjs/library'
 };
 
 module.exports = siteConfig;
