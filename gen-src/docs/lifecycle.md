@@ -8,7 +8,7 @@ sidebar_label: Lifecycle
 
 ![Lifecycle Diagram](../img/lifecycle.png)
 
-### Component  connectedCallback
+### Event connectedCallback
 
 By implementing this method your module will be prompted for it once your component is in "DOM".
 
@@ -19,7 +19,7 @@ connectedCallback():void{
 }
 ```
 
-### Event  disconnectedCallback
+### Event disconnectedCallback
 
 By implementing this method  your module will be prompted for it once your component is detached from "DOM".
 
@@ -46,8 +46,6 @@ eg.
 ### Event attributeChangedCallback
 
 By implementing this method your module will be notified when any attribute is changed.
-
-![attributeChangedCallback flowchart](../img/lifecycle-data-change.png)
 
 eg.
 ``` typescript
