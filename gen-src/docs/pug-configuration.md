@@ -10,14 +10,14 @@ FerrugemJS support working with any template format since it transpile to html f
 These section will show how to do it with [pugjs](https://pugjs.org/api/getting-started.html) .
 
 ## Install
-``` 
+``` npm
 npm install --save-dev pug pug-html-loader
 ```
 
 ## Initialization
 in "index.html"
 ``` html
- <div app="hello-world/hello-world" template-extension=".pug"></div>
+ <div app="hello-world" template-extension=".pug"></div>
 ```
 in "webpack.config.js"
 ``` javascript
@@ -29,3 +29,13 @@ in "webpack.config.js"
     ]
 }
 ```
+in "hello-world.pug"
+
+``` jade
+template
+	.hello-world
+		h1(alt="hello world") Hello world!
+```
+
+
+
