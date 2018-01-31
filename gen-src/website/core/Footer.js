@@ -44,14 +44,15 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a href="https://gitter.im/ferrugemjs/questions">Help</a>
+            <a target="_blank" href="https://gitter.im/ferrugemjs/questions">Help</a>
           </div>
           <div>
             <h5>More</h5>
-            <a href="ferrugemjs.blogspot.com/">Blog</a>
-            <a href="https://github.com/ferrugemjs/library">GitHub</a>
+            <a target="_blank" href="https://ferrugemjs.blogspot.com/">Blog</a>
+            <a target="_blank" href="https://github.com/ferrugemjs/library">GitHub</a>
             <a
               className="github-button"
+              target="_blank"
               href="https://github.com/ferrugemjs/library"
               data-icon="octicon-star"
               data-count-href="/facebook/docusaurus/stargazers"

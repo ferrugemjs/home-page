@@ -84,7 +84,7 @@ class HomeSplash extends React.Component {
           <PromoSection>
             <Button href={docUrl('getting-started.html', language)}>Getting Started</Button>
             <Button href="#cod_exa_case">Example</Button>
-            <Button href="https://github.com/ferrugemjs/library">GitHub</Button>
+            <Button target="_blank" href="https://github.com/ferrugemjs/library">GitHub</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -105,13 +105,13 @@ const Features = props => (
   <Block layout="fourColumn">
     {[
       {
-        content: 'Inspired from <a href="http://aurelia.io/">Aurelia</a>.',
+        content: 'Inspired from <a target="_blank" href="http://aurelia.io/">Aurelia</a>.',
         image: imgUrl('easy-use.png'),
         imageAlign: 'top',
         title: 'Simple and Convencional',
       },
       {
-        content: 'Inspired from <a href="https://reactjs.org/">React</a>.',
+        content: 'Inspired from <a target="_blank" href="https://reactjs.org/">React</a>.',
         image: imgUrl('new-logo-home.png'),
         imageAlign: 'top',
         title: 'Reactive',
