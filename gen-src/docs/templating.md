@@ -230,7 +230,9 @@ eg.
     	background-color:red;
     }
     </style>
-    <h1 class="especial-tag">My First APP with ${this.title}</h1>
+    <h1 class="especial-tag">
+	My First APP with ${this.title}
+    </h1>
 </template>
 ```
 
@@ -244,7 +246,9 @@ eg.
       background-color:red;
     }
     </style>
-    <h3 class="my-custom-classname">My element with a custom className</h3>
+    <h3 class="my-custom-classname">
+	My element with a custom className
+    </h3>
 </template>
 ```
 
@@ -266,7 +270,9 @@ eg.
       background-color:green;
     }
     </style>
-    <h3 class="${'my-custom-classname '+this.customStyle}">My element with a custom className by expression</h3>
+    <h3 class="${'my-custom-classname '+this.customStyle}">
+	My element with a custom className by expression
+    </h3>
 </template>
 ```
 
@@ -283,7 +289,7 @@ eg.
  </h1>
 </template>
 ```
-Bellow is as "hello-world.html" will be used.
+Bellow is how "hello-world.html" will be used.
 
 eg.
 ``` xml
@@ -312,7 +318,7 @@ eg.
 
 It is a basic example, but there are a example more elaborate at [ferrugemjs-router](https://github.com/ferrugemjs/router).
 
-eg.
+eg. of usage
 ``` xml
 <template>
   <require from="ui-vendor as ui" type="namespace"/>	
@@ -321,6 +327,12 @@ eg.
     <ui:progress-bar/>
   </div>
 </template>
+```
+eg. creation
+``` javascript
+// ui/index.js
+import progress_bar from './progress-par/progress-par.html'; // .html will be .html.js
+export {progress_bar}; // progress_bar will be used as ui:progress-bar
 ```
 
 
@@ -339,7 +351,7 @@ eg.
   </div>
 </template>
 ```
-You shouldnt use this every moment, but it is recomended to use in a  interation with tag "for" or directive "each".
+You shouldnt use this every moment, but it is recomended to use in a interation with tag "for" or directive "each".
 
 
 ## Directive "trigger"
