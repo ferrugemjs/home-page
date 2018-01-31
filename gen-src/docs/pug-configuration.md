@@ -21,12 +21,23 @@ in "index.html"
 ```
 in "webpack.config.js"
 ``` javascript
-{
- test: /\.pug$/,
- loaders: [
-    {loader:'ferrugemjs-loader' ,options:{ templateExtension:".pug" }},
-    'pug-html-loader'
-    ]
+module: {
+	loaders: [
+		{
+			test: /\.pug$/,
+			loaders: [
+				{ loader: "ferrugemjs-loader", options: { templateExtension: ".pug" }},
+				"pug-html-loader"
+			]
+		}
+		//... others loaders
+	]
+},
+resolve: {
+ 	extensions: [".ts", ".pug", ".js"],
+	alias: {
+		//... alias
+	}
 }
 ```
 in "hello-world.pug"

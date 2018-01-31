@@ -15,12 +15,23 @@ These section will show how to do it with <a href="https://pugjs.org/api/getting
 <pre><code class="hljs css html"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">app</span>=<span class="hljs-string">"hello-world"</span> <span class="hljs-attr">template-extension</span>=<span class="hljs-string">".pug"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>in &quot;webpack.config.js&quot;</p>
-<pre><code class="hljs css javascript">{
- <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.pug$/</span>,
- <span class="hljs-attr">loaders</span>: [
-    {<span class="hljs-attr">loader</span>:<span class="hljs-string">'ferrugemjs-loader'</span> ,<span class="hljs-attr">options</span>:{ <span class="hljs-attr">templateExtension</span>:<span class="hljs-string">".pug"</span> }},
-    <span class="hljs-string">'pug-html-loader'</span>
+<pre><code class="hljs css javascript"><span class="hljs-built_in">module</span>: {
+    <span class="hljs-attr">loaders</span>: [
+        {
+            <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.pug$/</span>,
+            <span class="hljs-attr">loaders</span>: [
+                { <span class="hljs-attr">loader</span>: <span class="hljs-string">"ferrugemjs-loader"</span>, <span class="hljs-attr">options</span>: { <span class="hljs-attr">templateExtension</span>: <span class="hljs-string">".pug"</span> }},
+                <span class="hljs-string">"pug-html-loader"</span>
+            ]
+        }
+        <span class="hljs-comment">//... others loaders</span>
     ]
+},
+<span class="hljs-attr">resolve</span>: {
+    <span class="hljs-attr">extensions</span>: [<span class="hljs-string">".ts"</span>, <span class="hljs-string">".pug"</span>, <span class="hljs-string">".js"</span>],
+    <span class="hljs-attr">alias</span>: {
+        <span class="hljs-comment">//... alias</span>
+    }
 }
 </code></pre>
 <p>in &quot;hello-world.pug&quot;</p>
