@@ -12,7 +12,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> 
       <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> 
-      <span class="hljs-attr">value</span>=<span class="hljs-string">"${new String('')}"</span> 
+      <span class="hljs-attr">value</span>=<span class="hljs-string">"${this.desc}"</span> 
       <span class="hljs-attr">change.bind</span>=<span class="hljs-string">"this.desc"</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
@@ -22,9 +22,10 @@
     <span class="hljs-keyword">this</span>.todos = [<span class="hljs-string">'do a test'</span>];
   }
   set desc(desc){
-    <span class="hljs-keyword">if</span>(desc.trim()){
-      <span class="hljs-keyword">this</span>.todos.push(desc);
-    }
+     <span class="hljs-keyword">this</span>.todos.push(desc);
+  }
+  get desc(){
+     <span class="hljs-keyword">return</span> <span class="hljs-string">""</span>;
   }
 }
 </code></pre>
