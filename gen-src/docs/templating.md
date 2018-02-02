@@ -135,13 +135,13 @@ eg.
 
 ## Directive "skip"
 
-Conditional children render with "skip" directive.
+Conditional directive to avoid children rerender.
 
 eg.
 ``` xml
 <template>
-  <div skip="this.name==='test'">
-    <span>name is test</span>
+  <div>
+    <span skip="this.name==='test'">name is test</span>
   </div>
 </template>
 ```
@@ -241,11 +241,6 @@ eg.
 eg.
 ``` html
 <template>
-    <style>
-    .my-custom-classname{
-      background-color:red;
-    }
-    </style>
     <h3 class="my-custom-classname">
 	My element with a custom className
     </h3>
@@ -259,17 +254,6 @@ eg.
 eg.
 ``` html
 <template>
-    <style>
-    .style1{
-      background-color:red;
-    }
-    .style2{
-      background-color:blue;
-    }
-    .style3{
-      background-color:green;
-    }
-    </style>
     <h3 class="${'my-custom-classname '+this.customStyle}">
 	My element with a custom className by expression
     </h3>
@@ -316,7 +300,7 @@ eg.
 
 ## Importing a ui library as a namespace
 
-It is a basic example, but there are a example more elaborate at [ferrugemjs-router](https://github.com/ferrugemjs/router).
+It is a basic example, but there are a more elaborate implementation at [twbs-hgo](https://github.com/hugolhmartins/twbs-hgo).
 
 eg. of usage
 ``` xml
@@ -328,6 +312,9 @@ eg. of usage
   </div>
 </template>
 ```
+
+## Creating a ui library as a namespace
+
 eg. creation
 ``` javascript
 // ui/index.js

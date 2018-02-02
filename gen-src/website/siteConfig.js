@@ -36,8 +36,8 @@ const siteConfig = {
   favicon: 'img/ferrugemjs-logo.png',
   /* colors for website */
   colors: {
-    primaryColor: '#0f0e0e',
-    secondaryColor: '#2f263b',
+    primaryColor: '#157c75',
+    secondaryColor: '#156f81',
   },
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright:
