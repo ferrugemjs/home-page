@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A simple, reactive, conventional and non-intrusive library.",
+    "tagline": "A reactive and non-intrusive library.",
     "components": "Components",
     "Working with components": "Working with components",
     "data-bind": "Binding",

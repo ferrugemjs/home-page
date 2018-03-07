@@ -338,7 +338,7 @@ eg.
   </div>
 </template>
 ```
-You shouldnt use this every moment, but it is recomended to use in a interation with tag "for" or directive "each".
+You shouldnt use this every moment, but it is recomended to use in a interation with tag "for".
 
 
 ## Directive "trigger"
@@ -396,7 +396,7 @@ eg.
 
 ### Tag "composition"
 
-With composition you need  use the same id an key:id to load the view.
+With composition you need use "view:from" to load the view.
 
 eg.
 ``` xml

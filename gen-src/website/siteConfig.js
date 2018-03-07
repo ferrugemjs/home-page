@@ -18,7 +18,7 @@ const users = [
 const siteConfig = {
   users,
   title: 'FerrugemJS' /* title for your website */,
-  tagline: 'A simple, reactive, conventional and non-intrusive library.',
+  tagline: 'A reactive and non-intrusive library.',
   url: 'https://ferrugemjs.github.io' /* your website url */,
   baseUrl: '/home-page/' /* base url for your project */,
   projectName: 'FerrugemJS',
