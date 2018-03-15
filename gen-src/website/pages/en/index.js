@@ -78,7 +78,7 @@ class HomeSplash extends React.Component {
     let language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('ferrugemjs.png')} />
+        <Logo img_src={imgUrl('new-logo-home.png')} />
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
@@ -112,7 +112,7 @@ const Features = props => (
       },
       {
         content: 'Inspired from <a target="_blank" href="https://reactjs.org/">React</a>.',
-        image: imgUrl('new-logo-home.png'),
+        image: imgUrl('reactivity.png'),
         imageAlign: 'top',
         title: 'Reactive',
       },

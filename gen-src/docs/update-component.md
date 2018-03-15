@@ -41,7 +41,7 @@ export class ModuleA{
 
 ## Refresh with callback
 
-You can pass props values as function in refresh.
+You can pass a function.
 
 eg.
 ``` typescript
@@ -49,9 +49,28 @@ export class ModuleA{
   private inc:number=0;
   private refresh:Function;//necessary if you want avoid typescript warnings
   private increment(){
-	this.refresh( state => ({
-		inc:state.inc + 2
-	}));
+	 this.refresh( state => ({
+		 inc:state.inc + 2
+	 }));
+  }
+}
+```
+
+## Refresh with promise
+
+You can pass a promise.
+
+eg.
+``` typescript
+export class ModuleA{
+  private inc:number=0;
+  private refresh:Function;//necessary if you want avoid typescript warnings
+  private increment(){
+   this.refresh(
+    new Promise(success => {
+      setTimeout( _ => success({ inc:this.inc+1 }),2000);
+    })
+   );
   }
 }
 ```

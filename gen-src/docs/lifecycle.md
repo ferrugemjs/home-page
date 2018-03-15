@@ -8,29 +8,29 @@ sidebar_label: Lifecycle
 
 ![Lifecycle Diagram](../img/lifecycle.png)
 
-### Event connectedCallback
+### Event attached
 
 By implementing this method your module will be prompted for it once your component is in "DOM".
 
 eg.
 ``` typescript
-connectedCallback():void{
+attached():void{
  console.log('im in DOM');
 }
 ```
 
-### Event disconnectedCallback
+### Event detached
 
-By implementing this method  your module will be prompted for it once your component is detached from "DOM".
+By implementing this method  your module will be prompted for it once your component is out of "DOM".
 
 eg.
 ``` typescript
-disconnectedCallback():void{
+detached():void{
  console.log('im out');
 }
 ```
 
-### Event shouldUpdateCallback
+### Event shouldRefresh
 
 By implementing  this method you can decide if a component should refresh or not by returning true or false.
 
@@ -38,20 +38,29 @@ By implementing  this method you can decide if a component should refresh or not
 
 eg.
 ``` typescript
-  private shouldUpdateCallback( new_props:ModuleA ):boolean{
-    return this.title !== new_props.title;
-  }
+private shouldRefresh( new_props:ModuleA ):boolean{
+	return this.title !== new_props.title;
+}
 ```
 
-### Event attributeChangedCallback
+### Event attributeChanged
 
 By implementing this method your module will be notified when any attribute is changed.
 
 eg.
 ``` typescript
-attributeChangedCallback( attrName:string, oldVal:any, newVal:any ):void{
- console.log(`attibute ${attrName} has changed!`);
+attributeChanged( attrName:string, oldVal:any, newVal:any ):void{
+	console.log(`attibute ${attrName} has changed!`);
 }
 ```
 
+### Async and await
 
+Events "attached", "detached" and "attributeChanged" can be write with async annotation.
+
+``` typescript
+async attached(){
+	let rs = await fetch('teste.json'); // or other promise
+	console.log(rs.status);
+}
+```

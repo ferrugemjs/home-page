@@ -31,9 +31,9 @@ const siteConfig = {
     //{blog: false, label: 'Blog'},
   ],
   /* path to images for header/footer */
-  headerIcon: 'img/ferrugemjs-logo.png',
-  footerIcon: 'img/ferrugemjs-logo.png',
-  favicon: 'img/ferrugemjs-logo.png',
+  headerIcon: 'img/header-logo.png',
+  footerIcon: 'img/header-logo.png',
+  favicon: 'img/favicon/favicon.png',
   /* colors for website */
   colors: {
     primaryColor: '#157c75',
