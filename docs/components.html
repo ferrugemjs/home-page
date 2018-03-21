@@ -30,6 +30,34 @@ By convention FerrugemJS know that &quot;module-a.ts&quot; is a controller file 
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 </code></pre>
 <p>Otherwise a module can be written in different forms as below:</p>
+<h2><a class="anchor" aria-hidden="true" name="with-typescript"></a><a href="#with-typescript" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>With Typescript</h2>
+<pre><code class="hljs css typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ModuleA{
+    <span class="hljs-keyword">private</span> title:<span class="hljs-built_in">string</span>;
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>){
+      <span class="hljs-keyword">this</span>.title = <span class="hljs-string">"test!"</span>;
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="we-recommend-typescript-to-large-medium-projects-because-it-s-language-features"></a><a href="#we-recommend-typescript-to-large-medium-projects-because-it-s-language-features" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>We recommend Typescript to large/medium projects because it´s language features.</h3>
+<h2><a class="anchor" aria-hidden="true" name="with-javascript-es6-class-syntax"></a><a href="#with-javascript-es6-class-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>With javascript es6 class syntax</h2>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleA</span></span>{
+    <span class="hljs-keyword">constructor</span>(){
+      <span class="hljs-keyword">this</span>.title = <span class="hljs-string">"test!"</span>;
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" name="with-a-exported-object"></a><a href="#with-a-exported-object" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>With a exported object.</h2>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-string">"desc"</span>:<span class="hljs-string">"default desc"</span>
+    ,doTest(){
+        <span class="hljs-keyword">this</span>.desc = <span class="hljs-string">"desc changed!"</span>;
+        <span class="hljs-keyword">this</span>.refresh();
+    }
+    ,attached(){
+        <span class="hljs-keyword">this</span>.desc = <span class="hljs-string">"changed when connected!"</span>;
+    }
+}
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" name="with-javascript-basic-function-or-immediately-invoked-function-using-amd"></a><a href="#with-javascript-basic-function-or-immediately-invoked-function-using-amd" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>With javascript basic function or “immediately invoked” function using AMD</h2>
 <pre><code class="hljs css javascript">define([<span class="hljs-string">"require"</span>, <span class="hljs-string">"exports"</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">require, exports</span>) </span>{
 <span class="hljs-meta">    "use strict"</span>;
@@ -42,20 +70,4 @@ By convention FerrugemJS know that &quot;module-a.ts&quot; is a controller file 
     exports.ModuleA = ModuleA;
 });
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" name="with-javascript-es6-class-syntax"></a><a href="#with-javascript-es6-class-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>With javascript es6 class syntax</h2>
-<pre><code class="hljs css javascript"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleA</span></span>{
-    <span class="hljs-keyword">constructor</span>(){
-      <span class="hljs-keyword">this</span>.title = <span class="hljs-string">"test!"</span>;
-    }
-}
-</code></pre>
-<h2><a class="anchor" aria-hidden="true" name="with-typescript"></a><a href="#with-typescript" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>With Typescript</h2>
-<pre><code class="hljs css typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ModuleA{
-    <span class="hljs-keyword">private</span> title:<span class="hljs-built_in">string</span>;
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>){
-      <span class="hljs-keyword">this</span>.title = <span class="hljs-string">"test!"</span>;
-    }
-}
-</code></pre>
-<h3><a class="anchor" aria-hidden="true" name="we-recommend-typescript-to-large-medium-projects-because-it-s-language-features"></a><a href="#we-recommend-typescript-to-large-medium-projects-because-it-s-language-features" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>We recommend Typescript to large/medium projects because it´s language features.</h3>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="getting-started.html">← Getting Started</a><a class="docs-next button" href="lifecycle.html">Lifecycle →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/home-page/" class="nav-home"><img src="/home-page/img/header-logo.png" alt="FerrugemJS" width="66" height="58"/></a><div><h5>Docs</h5><a href="/home-page/docs/en/getting-started.html">Getting Started</a><a href="/home-page/docs/en/readme.html">About</a></div><div><h5>Community</h5><a target="_blank" href="https://gitter.im/ferrugemjs/questions">Help</a></div><div><h5>More</h5><a target="_blank" href="https://ferrugemjs.blogspot.com/">Blog</a><a target="_blank" href="https://github.com/ferrugemjs/library">GitHub</a><a class="github-button" target="_blank" href="https://github.com/ferrugemjs/library" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
