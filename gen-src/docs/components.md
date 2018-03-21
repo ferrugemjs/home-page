@@ -38,6 +38,41 @@ now, we can importe into other template
 ```
 Otherwise a module can be written in different forms as below:
 
+## With Typescript
+
+``` typescript
+export class ModuleA{
+    private title:string;
+    constructor(){
+      this.title = "test!";
+    }
+}
+```
+### We recommend Typescript to large/medium projects because it´s language features.
+
+## With javascript es6 class syntax
+``` javascript
+export class ModuleA{
+    constructor(){
+      this.title = "test!";
+    }
+}
+```
+
+## With a exported object.
+``` javascript
+export default {
+    "desc":"default desc"
+    ,doTest(){
+        this.desc = "desc changed!";
+        this.refresh();
+    }
+    ,attached(){
+        this.desc = "changed when connected!";
+    }
+}
+```
+
 ## With javascript basic function or “immediately invoked” function using AMD
 ``` javascript
 define(["require", "exports"], function (require, exports) {
@@ -51,23 +86,3 @@ define(["require", "exports"], function (require, exports) {
     exports.ModuleA = ModuleA;
 });
 ```
-
-## With javascript es6 class syntax
-``` javascript
-export class ModuleA{
-    constructor(){
-      this.title = "test!";
-    }
-}
-```
-## With Typescript
-
-``` typescript
-export class ModuleA{
-    private title:string;
-    constructor(){
-      this.title = "test!";
-    }
-}
-```
-### We recommend Typescript to large/medium projects because it´s language features.
