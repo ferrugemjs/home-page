@@ -74,3 +74,7 @@ export class ModuleA{
   }
 }
 ```
+
+## Tag refresh
+
+See tag refresh in [templating](templating.md) page.

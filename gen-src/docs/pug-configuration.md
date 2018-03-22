@@ -6,8 +6,8 @@ sidebar_label: Working with pugjs
 
 ## About using other template formats
 
-FerrugemJS support working with any template format since it transpile to html format.
-These section will show how to do it with [pugjs](https://pugjs.org/api/getting-started.html) .
+FerrugemJS support working with any template format since it transpile to raw html.
+In these section we will help you to do it, but you can meybe prefer using our [official branch](https://github.com/ferrugemjs/skeleton-webpack/tree/to-pug) with [pugjs](https://pugjs.org/api/getting-started.html) already installed.
 
 ## Install
 ``` npm
@@ -47,6 +47,3 @@ template
 	.hello-world
 		h1(alt="hello world") Hello world!
 ```
-
-
-

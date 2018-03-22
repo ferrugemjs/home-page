@@ -4,7 +4,7 @@ title: Template functions
 sidebar_label: Templating
 ---
 
-## Directive "if"
+### Directive "if"
 
 Conditional render with "if".
 
@@ -17,7 +17,7 @@ eg.
 </template>
 ```
 
-## Tag "if"
+### Tag "if"
 
 Conditional flow with tag "if".
 
@@ -30,7 +30,7 @@ eg.
 </template>
 ```
 
-## Tags "if" and "else"
+### Tags "if" and "else"
 
 eg.
 ``` xml
@@ -46,7 +46,7 @@ eg.
 </template>
 ```
 
-## Tags "if" and "elseif"
+### Tags "if" and "elseif"
 
 eg.
 ``` xml
@@ -62,7 +62,7 @@ eg.
 </template>
 ```
 
-## Tags "if","elseif" and "else"
+### Tags "if","elseif" and "else"
 
 eg.
 ``` xml
@@ -81,7 +81,7 @@ eg.
 </template>
 ```
 
-## Directive "each"
+### Directive "each"
 
 eg.
 ``` xml
@@ -92,7 +92,7 @@ eg.
 </template>
 ```
 
-## Directive "each" with a custom index
+### Directive "each" with a custom index
 
 eg.
 ``` xml
@@ -103,7 +103,7 @@ eg.
 </template>
 ```
 
-## Tag "for"
+### Tag "for"
 
 eg.
 ``` xml
@@ -118,7 +118,7 @@ eg.
 
 
 
-## Tag "for" with index
+### Tag "for" with index
 
 eg.
 ``` xml
@@ -133,7 +133,7 @@ eg.
 
 
 
-## Directive "skip"
+### Directive "skip"
 
 Conditional directive to avoid children rerender.
 
@@ -149,7 +149,7 @@ eg.
 This is util when working with libs that dinamicaly insert itens into that node as [select2](https://select2.github.io/), [selectize](https://selectize.github.io/selectize.js/) and others.
 
 
-## Conditional attribute
+### Conditional attribute
 
 
 eg.
@@ -169,7 +169,7 @@ eg.
 ```
 
 
-## Importing other module
+### Importing other module
 
 eg.
 ``` html
@@ -184,7 +184,7 @@ eg.
 
 
 
-## Giving an alias in module import statement
+### Giving an alias in module import statement
 
 eg.
 ``` html
@@ -197,7 +197,7 @@ eg.
 </template>
 ```
 
-## Import a css, less, scss, sass or styl file
+### Import a css, less, scss, sass or styl file
 
 You need "plugin-css" for jspm or equivalent if you are using requirejs or webpack.
 
@@ -220,7 +220,7 @@ eg.
 </template>
 ```
 
-## Embed a tag "style".
+### Embed a tag "style".
 
 eg.
 ``` html
@@ -236,7 +236,7 @@ eg.
 </template>
 ```
 
-## Changing the css className
+### Changing the css className
 
 eg.
 ``` html
@@ -249,7 +249,7 @@ eg.
 
 
 
-## Changing the css className with expression
+### Changing the css className with expression
 
 eg.
 ``` html
@@ -260,7 +260,7 @@ eg.
 </template>
 ```
 
-## Tag "content"
+### Tag "content"
 
 Set where the content of element must be placed.
 
@@ -287,7 +287,7 @@ eg.
 </template>
 ```
 
-## Importing/using other library/script
+### Importing/using other library/script
 
 eg.
 ``` html
@@ -298,7 +298,7 @@ eg.
 ```
 
 
-## Importing a ui library as a namespace
+### Importing a ui library as a namespace
 
 It is a basic example, but there are a more elaborate implementation at [twbs-hgo](https://github.com/hugolhmartins/twbs-hgo).
 
@@ -313,7 +313,7 @@ eg. of usage
 </template>
 ```
 
-## Creating a ui library as a namespace
+### Creating a ui library as a namespace
 
 eg. creation
 ``` javascript
@@ -323,7 +323,7 @@ export {progress_bar}; // progress_bar will be used as ui:progress-bar
 ```
 
 
-## Attribute "key:id"
+### Attribute "key:id"
 
 When using attribute "key:id" the element instance will be preserved.
 
@@ -341,7 +341,7 @@ eg.
 You shouldnt use this every moment, but it is recomended to use in a interation with tag "for".
 
 
-## Directive "trigger"
+### Directive "trigger"
 
 This will associate a controller method to DOM event.
 
@@ -355,7 +355,7 @@ eg.
 
 
 
-## Directive "trigger" with paramaters
+### Directive "trigger" with paramaters
 
 This will associate a controller method to DOM event with paramaters.
 
@@ -366,7 +366,7 @@ eg.
 </template>
 ```
 
-## CamelCase method or attribute
+### CamelCase method or attribute
 
 To access a camelCase method or attribute from template use slashes '-'.
 
@@ -380,7 +380,7 @@ eg.
 </template>
 ```
 
-## Controller method
+### Controller method
 
 Controller method into a custom element event.
 
@@ -394,7 +394,7 @@ eg.
 </template>
 ```
 
-### Tag "composition"
+#### Tag "composition"
 
 With composition you need use "view:from" to load the view.
 
@@ -407,7 +407,7 @@ eg.
 </template>
 ```
 
-## Template "model" attribute
+### Template "model" attribute
 
 eg.
 ``` xml
@@ -420,7 +420,7 @@ eg.
 </template>
 ```
 
-## Template "no-model" attribute
+### Template "no-model" attribute
 
 Template viewmodel-less with "no-model" attribute.
 
@@ -431,7 +431,7 @@ eg.
 </template>
 ```
 
-## Function representation
+### Function representation
 
 If you have a function with a "export default" you can represent it in your template with a tag.
 
@@ -475,7 +475,7 @@ export default (config:{path:string,setHandler:Function})=>{
 </template>	
 ```
 
-## Tag "script"
+### Tag "script"
 
 Useful when working with some jquery plugins.
 
@@ -492,7 +492,7 @@ eg.
 </template>	
 ```
 
-## Conditional script
+### Conditional script
 
 eg.
 ``` xml
@@ -507,7 +507,7 @@ eg.
 </template>	
 ```
 
-## Scope of a component into "script" tag
+### Scope of a component into "script" tag
 
 Into a "script" tag the "this" scope is first attributed to component scope.
 
@@ -523,4 +523,23 @@ eg.
    </script>
  </div>
 </template>	
+```
+
+### Tag refresh
+
+eg.
+``` xml
+<template>
+ <div>
+  <span>${this.inc}</span>
+  <refresh if="this.inc === 1" inc="${2}"/>
+ </div>
+</template> 
+```
+
+Warning, be cauteloso to use this functionality to avoid freezing your component.
+So prefer using "refresh tag" with "if" condition and changing property value to skip previous condition as below:
+
+``` xml
+  <refresh if="this.inc === 1" inc="${2}"/>
 ```
