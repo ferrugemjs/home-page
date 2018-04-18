@@ -441,7 +441,7 @@ export default function(log:{}){
    console.log(log);
 }
 ```
-*** Using
+### Using
 
 ``` xml
 <template>
@@ -465,7 +465,7 @@ export default (config:{path:string,setHandler:Function})=>{
 	}
 }
 ```
-*** Using
+### Using
 ``` xml
 <template>
  <require from="../commons/router as add-router" type="script"/>

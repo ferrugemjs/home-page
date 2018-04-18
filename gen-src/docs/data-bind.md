@@ -56,3 +56,16 @@ export class HelloWorld{
   }
 }
 ```
+
+## Event binding in select
+
+When using event binding to inputs we have this sintaxes:
+
+eg.
+``` xml
+<template>
+  <div>
+    <h2>Hello World, ${this.name}</h2>
+    <input change.bind="this.name"/>
+  </div>
+</te

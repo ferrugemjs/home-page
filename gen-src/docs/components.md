@@ -36,7 +36,7 @@ now, we can importe into other template
     </div>
 </template>
 ```
-Otherwise a module can be written in different forms as below:
+Otherwise a module controller can be written in different forms as below:
 
 ## With Typescript
 
@@ -62,12 +62,12 @@ export class ModuleA{
 ## With a exported object.
 ``` javascript
 export default {
-    "desc":"default desc"
-    ,doTest(){
+    "desc":"default desc",
+    doTest(){
         this.desc = "desc changed!";
         this.refresh();
-    }
-    ,attached(){
+    },
+    attached(){
         this.desc = "changed when connected!";
     }
 }
@@ -86,3 +86,11 @@ define(["require", "exports"], function (require, exports) {
     exports.ModuleA = ModuleA;
 });
 ```
+
+## Without a model controller.
+
+See in [template no model-attribute](templating.md#template-no-model-attribute) page.
+
+## With a custom model controller.
+
+See in [template model attribute](templating.md#template-model-attribute) page.
