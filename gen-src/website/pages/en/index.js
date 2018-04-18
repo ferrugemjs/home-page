@@ -264,11 +264,11 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash language={language} />
+        <CodeExample/>
         <div className="mainContainer">
           <Features />
           <FeatureCallout />          
-        </div>
-        <CodeExample/>
+        </div>        
       </div>
     );
   }

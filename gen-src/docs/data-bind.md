@@ -13,7 +13,7 @@ eg.
 <template>
   <div>
     <h2>Hello World, ${this.name}</h2>
-    <input value="${this.name}"/>
+    <input type="text" value="${this.name}"/>
   </div>
 </template>
 ```
@@ -26,7 +26,7 @@ eg.
 <template>
   <div>
     <h2>Hello World, ${this.name}</h2>
-    <input keyup.bind="this.name"/>
+    <input type="text" keyup.bind="this.name"/>
   </div>
 </template>
 ```
@@ -37,7 +37,7 @@ eg.
 <template>
   <div>
     <h2>Hello World, ${this.name}</h2>
-    <input change.trigger="this.manualChangeMethod"/>
+    <input type="text" change.trigger="this.manualChangeMethod"/>
   </div>
 </template>
 ```
@@ -57,15 +57,31 @@ export class HelloWorld{
 }
 ```
 
-## Event binding in select
+## Event binding in select, checkbox and radiogroup.
 
-When using event binding to inputs we have this sintaxes:
+Examples:
 
 eg.
 ``` xml
 <template>
   <div>
     <h2>Hello World, ${this.name}</h2>
-    <input change.bind="this.name"/>
+    <input type="checkbox" value="y" change.bind="this.name"/>
+    <select change.bind="this.name">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+    <br/>
+    <label>
+      <input name="rdgroup" type="radio" value="RED" change.bind="this.name"/> Red
+    </label>
+    <label>
+      <input name="rdgroup" type="radio" value="GREEN" change.bind="this.name"/> Green
+    </label>
+    <label>
+      <input name="rdgroup" type="radio" value="BLUE" change.bind="this.name"/> Blue
+    </label>
   </div>
-</te
+<template>
+```

@@ -47,3 +47,29 @@ template
 	.hello-world
 		h1(alt="hello world") Hello world!
 ```
+
+## Tips with pug
+
+Using ferrugemjs [if](templating.md#tag-if) and [for](templating.md#tag-for) tags.
+
+eg.
+``` jade
+template
+	.hello-world
+		#{"if"}(condition="1 < 4")
+			do any thing here ....
+		#{"for"}(each="item in this.itens")
+			do any thing with item here ...
+```
+
+
+## Dinamic class
+
+Using ferrugem [dinamic class](templating.md#changing-the-css-classname-with-expression).
+
+eg.
+``` jade
+template
+	.hello-world
+		div(class="${'main-class '+( 1 < 4 ? 'class1' : 'class2')}")
+```
