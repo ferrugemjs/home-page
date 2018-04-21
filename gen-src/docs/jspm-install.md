@@ -7,8 +7,9 @@ sidebar_label: With jspm
 ## Install
 ``` npm
 jspm install npm:ferrugemjs
-npm install --save-dev gulp-ferrugemjs
+npm install --save-dev gulp gulp-ferrugemjs
 ```
+
 ## Initialization
 
 eg. index.html file
@@ -26,4 +27,27 @@ Just create app.ts files and app.html in the same directory of the index.html pa
 If you want to modify the path of the init file just add this information to the app attribute as below:
 ``` html
 <div app="other_path/init_app_file"></div>
+```
+
+## Compile
+
+Create a task to compile a template html to js as bellow:
+
+In gulpfile.js
+``` javascript
+var gulp = require('gulp');
+var rename = require('gulp-rename');
+var ferrugemjs = require('gulp-ferrugemjs');
+
+gulp.task('ferrugem2js',function(){
+    return gulp.src([
+        "./src/**/*.html"
+    ])
+    .pipe(ferrugemjs())
+    .pipe(rename({
+        extname: ".html.js"
+    }))
+    .pipe(gulp.dest('folder/dist'));
+});
+
 ```

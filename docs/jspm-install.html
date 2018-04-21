@@ -6,7 +6,7 @@
           };
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>With jspm</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" name="install"></a><a href="#install" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
 <pre><code class="hljs css npm"><span class="hljs-keyword">jspm </span><span class="hljs-keyword">install </span>npm:ferrugemjs
-npm <span class="hljs-keyword">install </span>--save-dev gulp-ferrugemjs
+npm <span class="hljs-keyword">install </span>--save-dev gulp gulp-ferrugemjs
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" name="initialization"></a><a href="#initialization" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initialization</h2>
 <p>eg. index.html file</p>
@@ -21,5 +21,24 @@ npm <span class="hljs-keyword">install </span>--save-dev gulp-ferrugemjs
 Just create app.ts files and app.html in the same directory of the index.html page.
 If you want to modify the path of the init file just add this information to the app attribute as below:</p>
 <pre><code class="hljs css html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">app</span>=<span class="hljs-string">"other_path/init_app_file"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" name="compile"></a><a href="#compile" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile</h2>
+<p>Create a task to compile a template html to js as bellow:</p>
+<p>In gulpfile.js</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> rename = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-rename'</span>);
+<span class="hljs-keyword">var</span> ferrugemjs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-ferrugemjs'</span>);
+
+gulp.task(<span class="hljs-string">'ferrugem2js'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">return</span> gulp.src([
+        <span class="hljs-string">"./src/**/*.html"</span>
+    ])
+    .pipe(ferrugemjs())
+    .pipe(rename({
+        <span class="hljs-attr">extname</span>: <span class="hljs-string">".html.js"</span>
+    }))
+    .pipe(gulp.dest(<span class="hljs-string">'folder/dist'</span>));
+});
+
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="webpack-install.html">← With webpack</a><a class="docs-next button" href="requirejs-install.html">With requirejs →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/home-page/" class="nav-home"><img src="/home-page/img/header-logo.png" alt="FerrugemJS 1.1.0" width="66" height="58"/></a><div><h5>Docs</h5><a href="/home-page/docs/en/getting-started.html">Getting Started</a><a href="/home-page/docs/en/readme.html">About</a></div><div><h5>Community</h5><a target="_blank" href="https://gitter.im/ferrugemjs/questions">Help</a></div><div><h5>More</h5><a target="_blank" href="https://ferrugemjs.blogspot.com/">Blog</a><a target="_blank" href="https://github.com/ferrugemjs/library">GitHub</a><a class="github-button" target="_blank" href="https://github.com/ferrugemjs/library" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>

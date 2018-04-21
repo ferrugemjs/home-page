@@ -94,7 +94,7 @@ class HomeSplash extends React.Component {
 
 const Block = props => (
   <Container
-    padding={['bottom', 'top']}
+    padding={['top']}
     id={props.id}
     background={props.background}>
     <GridBlock align="center" contents={props.children} layout={props.layout} />
@@ -122,8 +122,9 @@ const Features = props => (
 
 const FeatureCallout = props => (
   <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
+    className="productShowcaseSection"
+    style={{textAlign: 'center', backgroundColor: '#fff'}}>
+    <img src={ imgUrl('feather_80x80.png') }/>
     <h2>Lite and Powerfull</h2>
     <MarkdownBlock>No jquery required, only 2kB!</MarkdownBlock>
   </div>
@@ -199,7 +200,7 @@ const Showcase = props => {
 };
 
 const CodeExample = props => (
-<div id="cod_exa_case" className="container paddingBottom paddingTop">
+<div id="cod_exa_case" className="container paddingBottom">
   <div className="wrapper">
     <div className="gridBlock">
       <div className="blockElement threeByGridBlock">
@@ -261,14 +262,14 @@ class Index extends React.Component {
   render() {
     let language = this.props.language || '';
     // <Showcase language={language} />
+    // <HomeSplash language={language} />
     return (
-      <div>
-        <HomeSplash language={language} />
-        <CodeExample/>
-        <div className="mainContainer">
+      <div>    
+        <div className="mainContainer" style={{backgroundColor:'#fff'}}>
           <Features />
-          <FeatureCallout />          
-        </div>        
+          <FeatureCallout />
+        </div>
+        <CodeExample/>
       </div>
     );
   }

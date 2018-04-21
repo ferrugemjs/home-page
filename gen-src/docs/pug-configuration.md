@@ -11,7 +11,8 @@ In these section we will help you to do it, but you can meybe prefer using our [
 
 ## Install
 ``` npm
-npm install --save-dev pug pug-html-loader
+npm install pug pug-html-loader ferrugemjs-loader --save-dev
+npm i ferrugemjs --save
 ```
 
 ## Initialization
