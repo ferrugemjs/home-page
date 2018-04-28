@@ -298,7 +298,7 @@ eg.
 ```
 
 
-### Importing a ui library as a namespace
+### Using a ui library with namespace
 
 It is a basic example, but there are a more elaborate implementation at [twbs-hgo](https://github.com/hugolhmartins/twbs-hgo).
 
@@ -313,15 +313,78 @@ eg. of usage
 </template>
 ```
 
-### Creating a ui library as a namespace
+### Creating a ui library with namespace
 
 eg. creation
 ``` javascript
 // ui/index.js
-import progress_bar from './progress-par/progress-par.html'; // .html will be .html.js
-export {progress_bar}; // progress_bar will be used as ui:progress-bar
+import progressBar from './progress-bar/progress-bar.html'; // .html will be .html.js
+export { progressBar }; // progressBar will be used as ui:progress-bar
 ```
 
+When working with typescript you will need to create a ".html.d.ts" file to represent a valid import, with these content:
+
+``` javascript
+// ui/progress-bar/progress-bar.html.d.ts
+declare let obj:{};
+export default obj;
+```
+
+
+### Using a custom directive with namespace
+
+It is a basic example, but you can create your own directive to format html text contents.
+
+eg. of usage
+``` xml
+<template>
+  <require from="ui-vendor as d" type="namespace"/>  
+  <div>
+    <span>using a ui library</span>
+    <span d:replace-colors>This directive replace red to #FF0000 and blue to #0000FF in this text!</span>
+    <span d:replace-colors="blue">This directive will replace only blue to #0000FF in this text!</span>
+  </div>
+</template>
+```
+
+### Creating a ui library with namespace
+
+eg. creation
+``` javascript
+// ui/replace-colors/replace-colors
+export const replaceColors = (p_node: Node, p_value: string) => {
+  const replaceBasicColors = text => {
+    return  text
+              .replace(/(red)/g,'#ff0000')
+              .replace(/(green)/g,'#00ff00')
+              .replace(/(blue)/g,'#0000ff')
+              .replace(/(black)/g,'#000000')
+              .replace(/(yellow)/g,'#f0ff02')
+              .replace(/(white)/g,'#ffffff')
+              .replace(/(pink)/g,'#f900ff');  
+  }
+  if(p_value){
+    // will remove only one color
+    let oneColorReplace = replaceBasicColors( p_value );
+    p_node.nodeValue = p_node.nodeValue.replace( p_value, oneColorReplace );
+  }else{
+    // will remove all basic colors
+    p_node.nodeValue = replaceBasicColors( p_node.nodeValue );
+  }
+}
+```
+
+eg. exporting
+``` javascript
+// ui/index.js
+import { replaceColors } from './replace-colors/replace-colors'; //
+export { replaceColors }; // replaceColors will be used as ui:replace-colors
+```
+
+#### Limitations
+
+A custom directive actually must be used to replace and format innerText of basic html tags and not to format it's appearance or change it's behavior. 
+A good approach is to use the shortcut of libraries as [momentjs](https://momentjs.com/) or [i18n](https://www.i18next.com/).
 
 ### Attribute "key:id"
 
@@ -351,9 +414,6 @@ eg.
   <button click.trigger="this.showName">show my name!</button>
 </template>
 ```
-
-
-
 
 ### Directive "trigger" with paramaters
 

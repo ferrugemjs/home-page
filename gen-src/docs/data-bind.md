@@ -59,8 +59,6 @@ export class HelloWorld{
 
 ## Event binding in select, checkbox and radiogroup.
 
-Examples:
-
 eg.
 ``` xml
 <template>
