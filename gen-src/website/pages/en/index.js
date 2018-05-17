@@ -217,7 +217,7 @@ const CodeExample = props => (
     </ol>
     <input 
       type="text" 
-      value="\${this.desc}" 
+      value="\${''}" 
       change.bind="this.desc"/>
   </div>
 </template>
@@ -235,10 +235,9 @@ export class TodoList{
     this.todos = ['do a test'];
   }
   set desc(desc){
-     this.todos.push(desc);
-  }
-  get desc(){
-     return "";
+    if(desc && desc.trim()){
+      this.todos.push(desc);
+    }
   }
 }
 \`\`\`

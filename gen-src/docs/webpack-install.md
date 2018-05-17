@@ -20,7 +20,7 @@ add 'ferrugemjs-loader' to your rules and alias
 ``` javascript
 // webpack.config.js
 entry: {
-    app:['ferrugemjs/bootstrapper']
+    app:['init.js']
 },
 module: {
 	rules: [
@@ -33,34 +33,22 @@ module: {
 ,resolve: {
     extensions: [".js",".html"]
     ,alias:{
-    	"app":__dirname + '/src'
-		,"root_app":__dirname + '/app' //you can use this path alias or load with 'ferrugemjs/platform'
-    	,"ferrugemjs":"ferrugemjs/dist/core"
+    	"@":__dirname + '/src'
     }
  }
 ```
 
-## Initialization
+### Loading
 
-FerrugemJS will look for the first page element with the attribute "app" to start the application and if not found it, will use the tag "body".
-Just create app.js files and app.html in the same directory of the index.html page.
-
-### Custom loading
-
-To work with webpack there is 'ferrugemjs/bootstrapper' as a application bootstrapping. So replace 'ferrugemjs/bootstrapper' from 'entry' section of webpack to a new entry file (eg. init.js) and import it direct from your new file 'init.js' in 'entry' section.
-``` javascript
-// webpack.config.js
-entry: {
-    app:['init.js']
-},
-```
+To work with webpack there is 'ferrugemjs' as a application bootstrapping. So in entry file (eg. init.js) import it direct from your new file 'init.js' in 'entry' section.
 ``` javascript
 // init.js
-import bootstrapper from "ferrugemjs/bootstrapper";
+import { bootstrapper } from "ferrugemjs";
+bootstrapper();
 ```
-or with 'ferrugemjs/platform' as a application bootstrapping.
+or with 'ferrugemjs' as a platform.
 ``` javascript
-import platform from "ferrugemjs/platform";
+import { platform } from "ferrugemjs";
 import init_app from "./init-app";
 
 platform
@@ -69,3 +57,8 @@ platform
         document.getElementById("init_app_id")
     );
 ```
+
+## Initialization
+
+FerrugemJS will look for the first page element with the attribute "app" to start the application and if not found it, will use the tag "body".
+Just create app.js files and app.html in the same directory of the index.html page.

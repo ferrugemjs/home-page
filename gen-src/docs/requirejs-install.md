@@ -28,7 +28,7 @@ npm install gulp gulp-ferrugemjs --save-dev
       "incremental-dom":"node_modules/incremental-dom/dist/incremental-dom-min"
     }
   });
-  require(["ferrugemjs/bootstrapper"]);
+  require(["ferrugemjs"],function(fjs){ fjs.bootstrapper() });
 </script>
 ```
 ## Initialization

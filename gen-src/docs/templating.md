@@ -341,8 +341,8 @@ eg. of usage
   <require from="ui-vendor as d" type="namespace"/>  
   <div>
     <span>using a ui library</span>
-    <span d:replace-colors>This directive replace red to #FF0000 and blue to #0000FF in this text!</span>
-    <span d:replace-colors="blue">This directive will replace only blue to #0000FF in this text!</span>
+    <span d:upper-case>This directive change all text to UPPERCASE this text!</span>
+    <span d:upper-case="test">This directive will replace only test to TEST in this text!</span>
   </div>
 </template>
 ```
@@ -351,34 +351,23 @@ eg. of usage
 
 eg. creation
 ``` javascript
-// ui/replace-colors/replace-colors
-export const replaceColors = (p_node: Node, p_value: string) => {
-  const replaceBasicColors = text => {
-    return  text
-              .replace(/(red)/g,'#ff0000')
-              .replace(/(green)/g,'#00ff00')
-              .replace(/(blue)/g,'#0000ff')
-              .replace(/(black)/g,'#000000')
-              .replace(/(yellow)/g,'#f0ff02')
-              .replace(/(white)/g,'#ffffff')
-              .replace(/(pink)/g,'#f900ff');  
-  }
-  if(p_value){
-    // will remove only one color
-    let oneColorReplace = replaceBasicColors( p_value );
-    p_node.nodeValue = p_node.nodeValue.replace( p_value, oneColorReplace );
-  }else{
-    // will remove all basic colors
-    p_node.nodeValue = replaceBasicColors( p_node.nodeValue );
-  }
+// ui/upper-case/upper-case
+export const upperCase = (p_node: Node, p_value: string) => {
+    if(p_value){
+      p_node.nodeValue = p_node.nodeValue.replace(new RegExp(p_value,'g'), p1 => {
+        return p1.toUpperCase();
+      });
+    }else{
+      p_node.nodeValue = p_node.nodeValue.toUpperCase();
+    }    
 }
 ```
 
 eg. exporting
 ``` javascript
 // ui/index.js
-import { replaceColors } from './replace-colors/replace-colors'; //
-export { replaceColors }; // replaceColors will be used as ui:replace-colors
+import { upperCase } from './upper-case/upper-case'; //
+export { upperCase }; // upperCase will be used as ui:upper-case
 ```
 
 #### Limitations

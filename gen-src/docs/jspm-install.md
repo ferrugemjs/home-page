@@ -18,7 +18,7 @@ eg. index.html file
   <body>
     <div app></div>
     <script>
-      System.import("ferrugemjs/bootstrapper");
+      System.import("ferrugemjs").then(fjs => fjs.bootstrapper());
     </script>
   </body>
 ```
