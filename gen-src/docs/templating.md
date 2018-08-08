@@ -438,10 +438,28 @@ eg.
 <template>
   <require from="./test-comp"/>
   <div>
-    <test-comp on-change-name.subscribe="this.showName"/>
+    <test-comp on-change-name.subscribe="this.receiveNameFromChild"/>
   </div>
 </template>
 ```
+
+eg. 
+``` javascript
+// test-comp.js
+import { EventEmitter } from 'event-emitter-lite';
+
+export class TestComp{
+  constructor(){
+    this.onChangeName = new EventEmitter();
+    setTimeout(() => {
+      this.onChangeName.emit('Noise!!!!');
+    }, 4000);
+  }
+}
+```
+
+You can use ['event-emitter-lite'](https://www.npmjs.com/package/event-emitter-lite) which has a good integraction with ferrugemjs so when component is detached ferrugemjs call his 'unsubscribeAll' method automatically.
+I you need a aproach more complex please use ['v3rtigo'](https://www.npmjs.com/package/v3rtigo).
 
 #### Tag "composition"
 
@@ -485,8 +503,8 @@ eg.
 If you have a function with a "export default" you can represent it in your template with a tag.
 
 eg.
-``` typescript
-export default function(log:{}){ 
+``` javascript
+export default function(log){ 
    console.log(log);
 }
 ```
