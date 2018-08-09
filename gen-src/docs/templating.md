@@ -429,9 +429,10 @@ eg.
 </template>
 ```
 
-### Controller method
+### Event emitter
 
-Controller method into a custom element event.
+You can use ['event-emitter-lite'](https://www.npmjs.com/package/event-emitter-lite) which has a good integraction with ferrugemjs so when component is detached ferrugemjs call his 'unsubscribeAll' method automatically.
+If you need a aproach more complex please use ['v3rtigo'](https://www.npmjs.com/package/v3rtigo).
 
 eg.
 ``` xml
@@ -457,9 +458,6 @@ export class TestComp{
   }
 }
 ```
-
-You can use ['event-emitter-lite'](https://www.npmjs.com/package/event-emitter-lite) which has a good integraction with ferrugemjs so when component is detached ferrugemjs call his 'unsubscribeAll' method automatically.
-I you need a aproach more complex please use ['v3rtigo'](https://www.npmjs.com/package/v3rtigo).
 
 #### Tag "composition"
 
