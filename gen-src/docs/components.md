@@ -6,16 +6,15 @@ sidebar_label: Working with components
 
 ## Create component
 
-To create a component witch will be a custom tag do you need two files with same name(eg. "module-a.ts" and "module-a.html").
-By convention FerrugemJS know that "module-a.ts" is a controller file and "module-a.html" is the view of it and you can easily import it into your main app html file or into other module and use as a component with a custom tag.
+To create a component witch will be a custom tag do you need two files with same name(eg. "module-a.js" and "module-a.html").
+By convention FerrugemJS know that "module-a.js" is a controller file and "module-a.html" is the view of it and you can easily import it into your main app html file or into other module and use as a component with a custom tag.
 
 eg. 
-"module-a.ts" file.
-``` typescript
+"module-a.js" file.
+``` js
 export class ModuleA{
-    private title:string;
-    constructor(){
-      this.title = "test!";
+    constructor({title}){
+      this.title = title;
     }
 }
 ```
@@ -43,21 +42,12 @@ Otherwise a module controller can be written in different forms as below:
 ``` typescript
 export class ModuleA{
     private title:string;
-    constructor(){
+    constructor({title}:{title:string}){
       this.title = "test!";
     }
 }
 ```
 ### We recommend Typescript to large/medium projects because it´s language features.
-
-## With javascript es6 class syntax
-``` javascript
-export class ModuleA{
-    constructor(){
-      this.title = "test!";
-    }
-}
-```
 
 ## With a exported object.
 ``` javascript
@@ -65,7 +55,6 @@ export default {
     "desc":"default desc",
     doTest(){
         this.desc = "desc changed!";
-        this.refresh();
     },
     attached(){
         this.desc = "changed when connected!";

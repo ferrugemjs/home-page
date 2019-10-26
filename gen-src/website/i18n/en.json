@@ -4,40 +4,75 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "A reactive and non-intrusive library.",
-    "components": "Components",
-    "Working with components": "Working with components",
-    "data-bind": "Binding",
-    "Binding": "Binding",
-    "getting-started": "Getting Started",
-    "Getting Started": "Getting Started",
-    "individual-install": "Individual install",
-    "Individual install": "Individual install",
-    "jspm-install": "With jspm",
-    "With jspm": "With jspm",
-    "lifecycle": "Lifecycle",
-    "Lifecycle": "Lifecycle",
-    "pug-configuration": "Working with pugjs",
-    "Working with pugjs": "Working with pugjs",
-    "readme": "About FerrugemJS",
-    "About FerrugemJS": "About FerrugemJS",
-    "requirejs-install": "With requirejs",
-    "With requirejs": "With requirejs",
-    "router": "Router",
-    "Router": "Router",
-    "templating": "Template functions",
-    "Templating": "Templating",
-    "todo-list-example": "Todo List Example",
-    "Todo List Example": "Todo List Example",
-    "update-component": "Update component state",
-    "Update component": "Update component",
-    "webpack-install": "With webpack",
-    "With webpack": "With webpack",
-    "About": "About",
-    "Doc": "Doc",
-    "GitHub": "GitHub",
-    "Help": "Help",
-    "Using": "Using",
-    "Installation": "Installation"
+    "docs": {
+      "components": {
+        "title": "Components",
+        "sidebar_label": "Working with components"
+      },
+      "data-bind": {
+        "title": "Binding",
+        "sidebar_label": "Binding"
+      },
+      "getting-started": {
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
+      },
+      "individual-install": {
+        "title": "Individual install",
+        "sidebar_label": "Individual install"
+      },
+      "jspm-install": {
+        "title": "With jspm",
+        "sidebar_label": "With jspm"
+      },
+      "lifecycle": {
+        "title": "Lifecycle",
+        "sidebar_label": "Lifecycle"
+      },
+      "pug-configuration": {
+        "title": "Working with pugjs",
+        "sidebar_label": "Working with pugjs"
+      },
+      "readme": {
+        "title": "About FerrugemJS",
+        "sidebar_label": "About FerrugemJS"
+      },
+      "requirejs-install": {
+        "title": "With requirejs",
+        "sidebar_label": "With requirejs"
+      },
+      "router": {
+        "title": "Router",
+        "sidebar_label": "Router"
+      },
+      "templating": {
+        "title": "Template functions",
+        "sidebar_label": "Templating"
+      },
+      "todo-list-example": {
+        "title": "Todo List Example",
+        "sidebar_label": "Todo List Example"
+      },
+      "update-component": {
+        "title": "Update component state",
+        "sidebar_label": "Update component"
+      },
+      "webpack-install": {
+        "title": "With webpack",
+        "sidebar_label": "With webpack"
+      }
+    },
+    "links": {
+      "About": "About",
+      "Doc": "Doc",
+      "GitHub": "GitHub",
+      "Help": "Help"
+    },
+    "categories": {
+      "Getting Started": "Getting Started",
+      "Using": "Using",
+      "Installation": "Installation"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
