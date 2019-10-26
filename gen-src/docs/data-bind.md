@@ -42,17 +42,14 @@ eg.
 </template>
 ```
 
-``` typescript
+``` js
 export class HelloWorld{
-  private name:string;
-  private refresh:Function;//necessary if you want avoid typescript warnings
   constructor(){
-    this.name = "";
+    this.name = '';
   }
-  manualChangeMethod(event):void{	
-	//a reactive update after 'anyMethod' is calling
-	this.name = event.target.value;
-	this.refresh();
+  manualChangeMethod(event){	
+	  //a reactive update after 'manualChangeMethod' was called
+	  this.name = event.target.value;
   }
 }
 ```

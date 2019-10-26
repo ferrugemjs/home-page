@@ -13,8 +13,8 @@ sidebar_label: Lifecycle
 By implementing this method your module will be prompted for it once your component is in "DOM".
 
 eg.
-``` typescript
-attached():void{
+``` js
+attached(){
  console.log('im in DOM');
 }
 ```
@@ -24,22 +24,9 @@ attached():void{
 By implementing this method  your module will be prompted for it once your component is out of "DOM".
 
 eg.
-``` typescript
-detached():void{
+``` js
+detached(){
  console.log('im out');
-}
-```
-
-### Event shouldRefresh
-
-By implementing  this method you can decide if a component should refresh or not by returning true or false.
-
-![Update flowchart](../img/lifecycle-refresh.png)
-
-eg.
-``` typescript
-private shouldRefresh( new_props:ModuleA ):boolean{
-	return this.title !== new_props.title;
 }
 ```
 
@@ -48,9 +35,9 @@ private shouldRefresh( new_props:ModuleA ):boolean{
 By implementing this method your module will be notified when any attribute is changed.
 
 eg.
-``` typescript
-attributeChanged( attrName:string, oldVal:any, newVal:any ):void{
-	console.log(`attibute ${attrName} has changed!`);
+``` js
+set name( newVal ){
+	console.log(`attibute name has changed to ${newVal}!`);
 }
 ```
 
@@ -58,7 +45,7 @@ attributeChanged( attrName:string, oldVal:any, newVal:any ):void{
 
 Events "attached", "detached" and "attributeChanged" can be write with async annotation.
 
-``` typescript
+``` js
 async attached(){
 	let rs = await fetch('teste.json'); // or other promise
 	console.log(rs.status);

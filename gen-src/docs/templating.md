@@ -496,6 +496,25 @@ eg.
 </template>
 ```
 
+### Template "no-model" attribute and with a init script
+
+Template viewmodel-less with "no-model" attribute might have a init script as it constructor.
+
+eg.
+``` xml
+<template no-model>
+  <div>
+    <script type="text/javascript" init="init">
+      function init({title}){
+        this.loaded = true;
+        this.title = title;
+      }
+    </script>
+  </div>
+  <h1>NO viewmodel</h1>
+</template>
+```
+
 ### Function representation
 
 If you have a function with a "export default" you can represent it in your template with a tag.
